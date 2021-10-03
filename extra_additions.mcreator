@@ -1,0 +1,282 @@
+{
+  "id_map": {},
+  "mod_elements": [
+    {
+      "name": "Macineguitemplate",
+      "type": "procedure",
+      "sortid": 1,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "macineguitemplate",
+      "metadata": {
+        "dependencies": []
+      },
+      "path": "~/prossesing/template"
+    },
+    {
+      "name": "Tabiconprossesing",
+      "type": "item",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "tabiconprossesing",
+      "path": "~/prossesing"
+    },
+    {
+      "name": "Prossesing",
+      "type": "tab",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "prossesing",
+      "path": "~/prossesing"
+    },
+    {
+      "name": "Macinetemplategui",
+      "type": "gui",
+      "sortid": 3,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "macinetemplategui",
+      "path": "~/prossesing/template"
+    },
+    {
+      "name": "Macinetemplate",
+      "type": "block",
+      "sortid": 2,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "macinetemplate",
+      "path": "~/prossesing/template"
+    },
+    {
+      "name": "Unarytemplatetransmutation",
+      "type": "block",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "unarytemplatetransmutation",
+      "path": "~/unarytranmutations/template"
+    },
+    {
+      "name": "Unary_template_transmutation_ionty",
+      "type": "procedure",
+      "sortid": 4,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "unary_template_transmutation_ionty",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/unarytranmutations/template"
+    },
+    {
+      "name": "UnaryMeterGUI",
+      "type": "gui",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "unary_meter_gui",
+      "path": "~/unarytranmutations"
+    },
+    {
+      "name": "Cable",
+      "type": "procedure",
+      "sortid": 6,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "cable",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/unarytranmutations"
+    },
+    {
+      "name": "Pipe",
+      "type": "procedure",
+      "sortid": 7,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "pipe",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/unarytranmutations"
+    },
+    {
+      "name": "UnaryMeterUpdateTick",
+      "type": "procedure",
+      "sortid": 8,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "unary_meter_update_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/unarytranmutations"
+    },
+    {
+      "name": "UnaryMeter",
+      "type": "block",
+      "sortid": 5,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "unary_meter",
+      "path": "~/unarytranmutations"
+    },
+    {
+      "name": "UnaryCable",
+      "type": "block",
+      "sortid": 9,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "unary_cable",
+      "path": "~/unarytranmutations"
+    },
+    {
+      "name": "UnaryPipe",
+      "type": "block",
+      "sortid": 10,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "unary_pipe",
+      "path": "~/unarytranmutations"
+    }
+  ],
+  "variable_elements": [],
+  "sound_elements": [],
+  "language_map": {
+    "en_us": {
+      "item.extra_additions.tabiconprossesing": "Tabiconprossesing",
+      "itemGroup.tabprossesing": "Prossesing",
+      "block.extra_additions.macinetemplate": "Macinetemplate",
+      "block.extra_additions.unarytemplatetransmutation": "Unarytemplatetransmutation",
+      "block.extra_additions.unary_cable": "Unarytemplatetransmutation",
+      "block.extra_additions.unary_pipe": "Unarytemplatetransmutation",
+      "block.extra_additions.unary_meter": "Unary Meter"
+    }
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": [
+      {
+        "name": "prossesing",
+        "children": [
+          {
+            "name": "template",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "unarytranmutations",
+        "children": [
+          {
+            "name": "template",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  "workspaceSettings": {
+    "modid": "extra_additions",
+    "modName": "extra_additions",
+    "version": "1.0.0",
+    "author": "nycas, MCreator",
+    "websiteURL": "https://mcreator.net",
+    "license": "Academic Free License v3.0",
+    "disableForgeVersionCheck": true,
+    "serverSideOnly": false,
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "forge-1.16.5",
+    "modElementsPackage": "net.twallowhavenstudios.extraadditions",
+    "lockBaseModFiles": false
+  },
+  "mcreatorVersion": 202100236710
+}
