@@ -1,0 +1,8 @@
+{
+  "parent": "extra_additions:custom/conveyor",
+  "textures": {
+    "all": "extra_additions:blocks/contex",
+    "particle": "extra_additions:blocks/contex",
+    "0": "extra_additions:blocks/contex"
+  }
+}

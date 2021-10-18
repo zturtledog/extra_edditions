@@ -1,0 +1,11 @@
+{
+  "_fv": 24,
+  "_type": "tab",
+  "definition": {
+    "name": "Items",
+    "icon": {
+      "value": "CUSTOM:Tabiconitems"
+    },
+    "showSearch": false
+  }
+}

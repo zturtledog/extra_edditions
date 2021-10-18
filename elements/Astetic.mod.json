@@ -1,0 +1,11 @@
+{
+  "_fv": 24,
+  "_type": "tab",
+  "definition": {
+    "name": "Astetic",
+    "icon": {
+      "value": "CUSTOM:TabIconAstetic"
+    },
+    "showSearch": false
+  }
+}

@@ -107,7 +107,7 @@
     "hasInventory": true,
     "guiBoundTo": "Macinetemplategui",
     "openGUIOnRightClick": true,
-    "inventorySize": 2,
+    "inventorySize": 201,
     "inventoryStackSize": 64,
     "inventoryDropWhenDestroyed": true,
     "inventoryComparatorPower": true,

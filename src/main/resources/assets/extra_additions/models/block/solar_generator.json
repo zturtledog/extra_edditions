@@ -1,0 +1,8 @@
+{
+  "parent": "extra_additions:custom/slab",
+  "textures": {
+    "all": "extra_additions:blocks/solarpannel",
+    "particle": "extra_additions:blocks/solarpannel",
+    "0": "extra_additions:blocks/solarpannel"
+  }
+}

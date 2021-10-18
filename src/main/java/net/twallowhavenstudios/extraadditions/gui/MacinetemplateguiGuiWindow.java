@@ -78,7 +78,8 @@ public class MacinetemplateguiGuiWindow extends ContainerScreen<Macinetemplategu
 					return tileEntity.getTileData().getString(tag);
 				return "";
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "prgs")) + "", 24, 43, -12829636);
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "prgs")) + "", 25, 38, -12829636);
+		this.font.drawString(ms, "power:", 83, 56, -12829636);
 	}
 
 	@Override

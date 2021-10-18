@@ -1,0 +1,217 @@
+{
+  "_fv": 24,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 189,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "click here to start",
+          "width": 120,
+          "height": 20,
+          "name": "search",
+          "x": 183,
+          "y": 42
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "@",
+          "onClick": {
+            "name": "SearchWiki"
+          },
+          "width": 30,
+          "height": 20,
+          "name": "@",
+          "x": 151,
+          "y": 42
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "H",
+          "onClick": {
+            "name": "Homepage"
+          },
+          "width": 30,
+          "height": 20,
+          "name": "H",
+          "x": 123,
+          "y": 42
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<ENBT:text:name>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<ENBT:text:name>",
+          "x": 170,
+          "y": 78
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "catagory:<ENBT:text:catagory>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "catagory:<ENBT:text:catagory>",
+          "x": 124,
+          "y": 92
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "discription",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "discription",
+          "x": 183,
+          "y": 105
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<ENBT:text:descriptionln1>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<ENBT:text:descriptionln1>",
+          "x": 126,
+          "y": 115
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<ENBT:text:descriptionln2>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<ENBT:text:descriptionln2>",
+          "x": 126,
+          "y": 124
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<ENBT:text:descriptionln3>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<ENBT:text:descriptionln3>",
+          "x": 126,
+          "y": 133
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<ENBT:text:descriptionln4>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<ENBT:text:descriptionln4>",
+          "x": 126,
+          "y": 142
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<ENBT:text:descriptionln5>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<ENBT:text:descriptionln5>",
+          "x": 126,
+          "y": 151
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<ENBT:text:descriptionln6>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<ENBT:text:descriptionln6>",
+          "x": 126,
+          "y": 160
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<ENBT:text:descriptionln7>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<ENBT:text:descriptionln7>",
+          "x": 126,
+          "y": 168
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<ENBT:text:descriptionln8>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<ENBT:text:descriptionln8>",
+          "x": 126,
+          "y": 176
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<ENBT:text:descriptionln9>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "<ENBT:text:descriptionln9>",
+          "x": 126,
+          "y": 185
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

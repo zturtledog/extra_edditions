@@ -1,0 +1,11 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "unaryinfysother1",
+        "1": "red"
+      },
+      "name": "default"
+    }
+  }
+}

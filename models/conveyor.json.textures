@@ -1,0 +1,16 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "contex"
+      },
+      "name": "default"
+    },
+    "lvl0": {
+      "map": {
+        "0": "contex0"
+      },
+      "name": "lvl0"
+    }
+  }
+}

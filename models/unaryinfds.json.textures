@@ -1,0 +1,16 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "unaryinfds"
+      },
+      "name": "default"
+    },
+    "cable": {
+      "map": {
+        "0": "unaryinfdsother"
+      },
+      "name": "cable"
+    }
+  }
+}

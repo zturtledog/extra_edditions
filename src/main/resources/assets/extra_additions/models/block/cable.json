@@ -1,0 +1,8 @@
+{
+  "parent": "extra_additions:custom/cable",
+  "textures": {
+    "all": "extra_additions:blocks/cable",
+    "particle": "extra_additions:blocks/cable",
+    "0": "extra_additions:blocks/cable"
+  }
+}

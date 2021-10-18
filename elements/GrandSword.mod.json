@@ -1,0 +1,36 @@
+{
+  "_fv": 24,
+  "_type": "tool",
+  "definition": {
+    "renderType": 0,
+    "texture": "grandsword",
+    "customModelName": "Normal",
+    "name": "Grand Sword",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "TOOLS"
+    },
+    "toolType": "Sword",
+    "harvestLevel": 5,
+    "efficiency": 4.0,
+    "attackSpeed": 1.0,
+    "enchantability": 1,
+    "damageVsEntity": 4.0,
+    "usageCount": 215,
+    "blocksAffected": [],
+    "hasGlow": false,
+    "repairItems": [],
+    "immuneToFire": true,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onRightClickedInAir": {
+      "name": "GrandSwordRightClickedInAir"
+    },
+    "onEntityHitWith": {
+      "name": "GrandSwordLivingEntityIsHitWithTool"
+    },
+    "onItemInUseTick": {
+      "name": "GrandSwordToolInHandTick"
+    }
+  }
+}

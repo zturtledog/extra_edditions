@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "extra_additions:blocks/red",
+    "up": "extra_additions:blocks/red",
+    "north": "extra_additions:blocks/red",
+    "east": "extra_additions:blocks/red",
+    "south": "extra_additions:blocks/red",
+    "west": "extra_additions:blocks/red",
+    "particle": "extra_additions:blocks/red"
+  }
+}

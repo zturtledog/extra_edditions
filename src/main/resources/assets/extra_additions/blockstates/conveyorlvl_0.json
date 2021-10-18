@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "extra_additions:block/conveyorlvl_0"
+    },
+    "facing=east": {
+      "model": "extra_additions:block/conveyorlvl_0",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "extra_additions:block/conveyorlvl_0",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "extra_additions:block/conveyorlvl_0",
+      "y": 270
+    }
+  }
+}

@@ -19,8 +19,8 @@
             "falpha": 0.0
           },
           "name": "<BNBT:text:prgs>",
-          "x": 150,
-          "y": 80
+          "x": 151,
+          "y": 75
         }
       },
       {
@@ -45,7 +45,34 @@
           "dropItemsWhenNotBound": true,
           "name": "Slot #1",
           "x": 276,
-          "y": 80
+          "y": 71
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "id": 2,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #2",
+          "x": 240,
+          "y": 89
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "power:",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "power:",
+          "x": 209,
+          "y": 93
         }
       }
     ],
@@ -54,7 +81,7 @@
       "sy": 18,
       "ox": 11,
       "oy": 15,
-      "snapOnGrid": true
+      "snapOnGrid": false
     }
   }
 }

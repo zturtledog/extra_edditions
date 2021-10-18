@@ -1,0 +1,60 @@
+{
+  "_fv": 24,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 135,
+    "height": 80,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "click to begin searching",
+          "width": 120,
+          "height": 20,
+          "name": "search",
+          "x": 153,
+          "y": 106
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "search",
+          "onClick": {
+            "name": "SearchWiki"
+          },
+          "width": 55,
+          "height": 20,
+          "name": "search",
+          "x": 188,
+          "y": 131
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "in-game wiki",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "in-game wiki",
+          "x": 214,
+          "y": 86
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}
