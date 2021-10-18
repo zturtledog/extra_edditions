@@ -8,7 +8,7 @@ version="1.0.0"
 displayName="extra_additions"
 credits="Created using mod maker MCreator - https://mcreator.net/about"
 displayURL="https://mcreator.net"
-authors="nycas, MCreator"
+authors="twallowhavenstudios, thepinkantfoundation"
 
 [[dependencies.extra_additions]]
     modId="minecraft"
@@ -19,4 +19,10 @@ authors="nycas, MCreator"
 
 
 
+[[dependencies.extra_additions]]
+    modId="just_enough_items"
+    mandatory=false
+    versionRange="[0,)"
+    ordering="NONE"
+    side="BOTH"
 

@@ -740,6 +740,16 @@
       "ids": {},
       "registry_name": "up_conveyor_lvl_1",
       "path": "~/conveyor"
+    },
+    {
+      "name": "Tooltips",
+      "type": "code",
+      "sortid": 42,
+      "compiles": true,
+      "locked_code": true,
+      "ids": {},
+      "registry_name": "tooltips",
+      "path": "~/jei"
     }
   ],
   "variable_elements": [],
@@ -827,6 +837,10 @@
       },
       {
         "name": "SMITYDH",
+        "children": []
+      },
+      {
+        "name": "jei",
         "children": []
       }
     ]

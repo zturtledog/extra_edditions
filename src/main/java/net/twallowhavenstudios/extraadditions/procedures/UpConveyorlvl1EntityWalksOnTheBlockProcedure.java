@@ -114,6 +114,6 @@ public class UpConveyorlvl1EntityWalksOnTheBlockProcedure {
 		}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.EAST)) {
 			t2 = (double) 0.3;
 		}
-		entity.setMotion((t2 + (entity.getMotion().getX())), ((entity.getMotion().getY()) + 0.3), (o1 + (entity.getMotion().getZ())));
+		entity.setMotion((t2 + (entity.getMotion().getX())), ((entity.getMotion().getY()) + 0.8), (o1 + (entity.getMotion().getZ())));
 	}
 }
