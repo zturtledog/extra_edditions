@@ -16,8 +16,10 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.client.gui.widget.TextFieldWidget;
 
 import java.util.Map;
+import java.util.HashMap;
 
 import io.netty.buffer.Unpooled;
 
@@ -26,6 +28,11 @@ public class SearchWikiProcedure {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
 				ExtraAdditionsMod.LOGGER.warn("Failed to load dependency entity for procedure SearchWiki!");
+			return;
+		}
+		if (dependencies.get("guistate") == null) {
+			if (!dependencies.containsKey("guistate"))
+				ExtraAdditionsMod.LOGGER.warn("Failed to load dependency guistate for procedure SearchWiki!");
 			return;
 		}
 		if (dependencies.get("x") == null) {
@@ -49,11 +56,21 @@ public class SearchWikiProcedure {
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
+		HashMap guistate = (HashMap) dependencies.get("guistate");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
 		IWorld world = (IWorld) dependencies.get("world");
 		String inp = "";
+		inp = (String) (new Object() {
+			public String getText() {
+				TextFieldWidget _tf = (TextFieldWidget) guistate.get("text:search");
+				if (_tf != null) {
+					return _tf.getText();
+				}
+				return "";
+			}
+		}.getText());
 		{
 			Entity _ent = entity;
 			if (_ent instanceof ServerPlayerEntity) {
@@ -71,15 +88,29 @@ public class SearchWikiProcedure {
 				}, _bpos);
 			}
 		}
+		entity.getPersistentData().putString("descriptionln1", "");
+		entity.getPersistentData().putString("descriptionln2", "");
+		entity.getPersistentData().putString("descriptionln3", "");
+		entity.getPersistentData().putString("descriptionln4", " ");
+		entity.getPersistentData().putString("descriptionln5", " ");
+		entity.getPersistentData().putString("descriptionln6", " ");
+		entity.getPersistentData().putString("descriptionln7", " ");
+		entity.getPersistentData().putString("descriptionln8", " ");
+		entity.getPersistentData().putString("descriptionln9", " ");
 		if (((inp).equals("Assembler"))) {
 			entity.getPersistentData().putString("name", "Assembler");
 			entity.getPersistentData().putString("catagory", "macines");
-			entity.getPersistentData().putString("descriptionln1", "tagValue");
-			entity.getPersistentData().putString("descriptionln2", "tagValue");
+			entity.getPersistentData().putString("descriptionln1", "Your first venture into the");
+			entity.getPersistentData().putString("descriptionln2", "computer industry, it is required");
+			entity.getPersistentData().putString("descriptionln3", "for anything more advanced");
+			entity.getPersistentData().putString("descriptionln4", "than a disk of iron, it takes 3");
+			entity.getPersistentData().putString("descriptionln5", "TPT per cycle.");
 		} else {
 			entity.getPersistentData().putString("name", "error");
 			entity.getPersistentData().putString("catagory", "error");
-			entity.getPersistentData().putString("descriptionln1", "this entry has not been found");
+			entity.getPersistentData().putString("descriptionln1", (("the entry: ") + "" + (inp) + "" + (" has not been found")));
+			entity.getPersistentData().putString("descriptionln2", "the spelling and capitilazation must be");
+			entity.getPersistentData().putString("descriptionln2", "prsise or you might get this screen");
 		}
 	}
 }

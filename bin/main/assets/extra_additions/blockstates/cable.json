@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "extra_additions:block/cable"
+    },
+    "facing=east": {
+      "model": "extra_additions:block/cable",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "extra_additions:block/cable",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "extra_additions:block/cable",
+      "y": 270
+    },
+    "facing=up": {
+      "model": "extra_additions:block/cable",
+      "x": 270
+    },
+    "facing=down": {
+      "model": "extra_additions:block/cable",
+      "x": 90
+    }
+  }
+}

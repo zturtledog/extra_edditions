@@ -1,51 +1,133 @@
-/**
- * The code of this mod element is always locked.
- *
- * You can register new events in this class too.
- *
- * If you want to make a plain independent class, create it using
- * Project Browser -> New... and make sure to make the class
- * outside net.twallowhavenstudios.extraadditions as this package is managed by MCreator.
- *
- * If you change workspace package, modid or prefix, you will need
- * to manually adapt this file to these changes or remake it.
- *
- * This class will be added in the mod root package.
-*/
 package net.twallowhavenstudios.extraadditions;
 
-import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.world.BiomeLoadingEvent;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
+import mezz.jei.api.IModPlugin;
+import mezz.jei.api.constants.VanillaTypes;
+import mezz.jei.api.gui.IRecipeLayout;
+import mezz.jei.api.gui.drawable.IDrawable;
+import mezz.jei.api.gui.ingredient.IGuiItemStackGroup;
+import mezz.jei.api.helpers.IGuiHelper;
+import mezz.jei.api.helpers.IJeiHelpers;
+import mezz.jei.api.ingredients.IIngredients;
+import mezz.jei.api.recipe.category.IRecipeCategory;
+import mezz.jei.api.registration.IRecipeCatalystRegistration;
+import mezz.jei.api.registration.IRecipeCategoryRegistration;
+import mezz.jei.api.registration.IRecipeRegistration;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
+import net.minecraft.util.ResourceLocation;
+import net.twallowhavenstudios.extraadditions.block.AssemblerBlock;
+import net.twallowhavenstudios.extraadditions.item.TagItem;
+import net.twallowhavenstudios.extraadditions.item.TransistorItem;
 
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
-public class Tooltips {
-	public Tooltips() {
+import java.util.ArrayList;
+import java.util.List;
+
+@mezz.jei.api.JeiPlugin
+public class Tooltips implements IModPlugin {
+	public static IJeiHelpers jeiHelper;
+	@Override
+	public ResourceLocation getPluginUid() {
+		return new ResourceLocation("extra_additions", "default");
 	}
 
-	@SubscribeEvent
-	public static void init(FMLCommonSetupEvent event) {
-		new Tooltips();
+	@Override
+	public void registerCategories(IRecipeCategoryRegistration registration) {
+		jeiHelper = registration.getJeiHelpers();
+		registration.addRecipeCategories(new AssemblerBlockJeiCategory(jeiHelper.getGuiHelper()));
 	}
-	@Mod.EventBusSubscriber
-	private static class ForgeBusEvents {
-		// Example Forge bus event registration
-		@SubscribeEvent
-		public static void addFeatureToBiomes(BiomeLoadingEvent event) {
+
+	@Override
+	public void registerRecipes(IRecipeRegistration registration) {
+		registration.addRecipes(generateAssemblerBlockRecipes(), AssemblerBlockJeiCategory.Uid);
+		// ...
+	}
+
+	private List<AssemblerBlockJeiCategory.AssemblerBlockRecipeWrapper> generateAssemblerBlockRecipes() {
+		List<AssemblerBlockJeiCategory.AssemblerBlockRecipeWrapper> recipes = new ArrayList<>();
+		ArrayList<ItemStack> inputs = new ArrayList<>();
+        ArrayList<ItemStack> outputs = new ArrayList<>();
+        inputs.add(new ItemStack(TransistorItem.block));
+        outputs.add(new ItemStack(TagItem.block));
+        // ...
+		recipes.add(new AssemblerBlockJeiCategory.AssemblerBlockRecipeWrapper(inputs, outputs));
+		return recipes;
+	}
+
+	@Override
+	public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
+		registration.addRecipeCatalyst(new ItemStack(AssemblerBlock.block), AssemblerBlockJeiCategory.Uid);
+	}
+	public static class AssemblerBlockJeiCategory implements IRecipeCategory<AssemblerBlockJeiCategory.AssemblerBlockRecipeWrapper> {
+		private static ResourceLocation Uid = new ResourceLocation("extra_additions", "assemblerblockcategory");
+		private static final int input1 = 0; // THE NUMBER = SLOTID
+		private static final int output1 = 1; // THE NUMBER = SLOTID
+		// ...
+		private final String title;
+		private final IDrawable background;
+		public AssemblerBlockJeiCategory(IGuiHelper guiHelper) {
+			this.title = "Assembler";
+			this.background = guiHelper.createDrawable(new ResourceLocation("extra_additions", "src/main/resources/assets/extra_additions/textures/assembler_gui.png"), 0, 0, 176, 166);
 		}
 
-		@SubscribeEvent
-		public static void serverLoad(FMLServerStartingEvent event) {
+		@Override
+		public ResourceLocation getUid() {
+			return Uid;
 		}
 
-		@OnlyIn(Dist.CLIENT)
-		@SubscribeEvent
-		public static void clientLoad(FMLClientSetupEvent event) {
+		@Override
+		public Class<? extends AssemblerBlockRecipeWrapper> getRecipeClass() {
+			return AssemblerBlockJeiCategory.AssemblerBlockRecipeWrapper.class;
 		}
+
+		@Override
+		public String getTitle() {
+			return title;
+		}
+
+		@Override
+		public IDrawable getBackground() {
+			return background;
+		}
+
+		@Override
+		public IDrawable getIcon() {
+			return null;
+		}
+
+		@Override
+		public void setIngredients(AssemblerBlockRecipeWrapper recipeWrapper, IIngredients iIngredients) {
+            iIngredients.setInputs(VanillaTypes.ITEM, recipeWrapper.getInput());
+            iIngredients.setOutputs(VanillaTypes.ITEM, recipeWrapper.getOutput());
+		}
+
+		@Override
+		public void setRecipe(IRecipeLayout iRecipeLayout, AssemblerBlockRecipeWrapper recipeWrapper, IIngredients iIngredients) {
+			IGuiItemStackGroup stacks = iRecipeLayout.getItemStacks();
+			stacks.init(input1, true, 32, 44);
+			stacks.init(output1, false, 176, 71);
+            // ...
+
+            stacks.set(input1, iIngredients.getInputs(VanillaTypes.ITEM).get(0));
+			stacks.set(output1, iIngredients.getOutputs(VanillaTypes.ITEM).get(0));
+			// ...
+		}
+		public static class AssemblerBlockRecipeWrapper {
+            private List<ItemStack> input;
+            private List<ItemStack> output;
+
+            public AssemblerBlockRecipeWrapper(List<ItemStack> input, List<ItemStack> output) {
+                this.input = input;
+                this.output = output;
+            }
+
+
+            public List<ItemStack> getInput() {
+                return input;
+            }
+
+            public List<ItemStack> getOutput() {
+                return output;
+            }
+        }
 	}
 }

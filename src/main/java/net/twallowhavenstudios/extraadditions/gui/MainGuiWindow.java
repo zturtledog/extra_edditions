@@ -92,15 +92,15 @@ public class MainGuiWindow extends ContainerScreen<MainGui.GuiContainerMod> {
 	public void init(Minecraft minecraft, int width, int height) {
 		super.init(minecraft, width, height);
 		minecraft.keyboardListener.enableRepeatEvents(true);
-		search = new TextFieldWidget(this.font, this.guiLeft + 7, this.guiTop + 26, 120, 20, new StringTextComponent("click to begin searching")) {
+		search = new TextFieldWidget(this.font, this.guiLeft + 7, this.guiTop + 26, 120, 20, new StringTextComponent("click here to begin")) {
 			{
-				setSuggestion("click to begin searching");
+				setSuggestion("click here to begin");
 			}
 			@Override
 			public void writeText(String text) {
 				super.writeText(text);
 				if (getText().isEmpty())
-					setSuggestion("click to begin searching");
+					setSuggestion("click here to begin");
 				else
 					setSuggestion(null);
 			}
@@ -109,7 +109,7 @@ public class MainGuiWindow extends ContainerScreen<MainGui.GuiContainerMod> {
 			public void setCursorPosition(int pos) {
 				super.setCursorPosition(pos);
 				if (getText().isEmpty())
-					setSuggestion("click to begin searching");
+					setSuggestion("click here to begin");
 				else
 					setSuggestion(null);
 			}

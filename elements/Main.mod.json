@@ -13,7 +13,7 @@
       {
         "type": "textfield",
         "data": {
-          "placeholder": "click to begin searching",
+          "placeholder": "click here to begin",
           "width": 120,
           "height": 20,
           "name": "search",

@@ -1,0 +1,17 @@
+{
+  "_fv": 24,
+  "_type": "musicdisc",
+  "definition": {
+    "texture": "coruptedisc",
+    "name": "Coruptedisc",
+    "description": "--",
+    "creativeTab": {
+      "value": "MISC"
+    },
+    "music": {
+      "value": "CUSTOM:coruptedisc"
+    },
+    "specialInfo": [],
+    "hasGlow": false
+  }
+}

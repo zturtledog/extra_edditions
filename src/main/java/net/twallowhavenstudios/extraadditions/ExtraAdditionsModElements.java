@@ -45,6 +45,10 @@ public class ExtraAdditionsModElements {
 	public final List<Supplier<Enchantment>> enchantments = new ArrayList<>();
 	public static Map<ResourceLocation, net.minecraft.util.SoundEvent> sounds = new HashMap<>();
 	public ExtraAdditionsModElements() {
+		sounds.put(new ResourceLocation("extra_additions", "coruptedisc"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("extra_additions", "coruptedisc")));
+		sounds.put(new ResourceLocation("extra_additions", "seventhmoon"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("extra_additions", "seventhmoon")));
 		try {
 			ModFileScanData modFileInfo = ModList.get().getModFileById("extra_additions").getFile().getScanResult();
 			Set<ModFileScanData.AnnotationData> annotations = modFileInfo.getAnnotations();
