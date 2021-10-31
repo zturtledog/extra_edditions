@@ -8,4 +8,6 @@ how to add a wiki entry:
 4. duplicate the detached "if statement"
 5. use the detached if statement to whrite a entry like a template
 
+
+or just ask me
 */
