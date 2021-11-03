@@ -1,0 +1,26 @@
+{
+  "_fv": 24,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "CUSTOM:IronWafer"
+      },
+      {
+        "value": "CUSTOM:GoldWafer"
+      },
+      {
+        "value": "CUSTOM:CopperWafer"
+      },
+      {
+        "value": "CUSTOM:SiliconeWafer"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "name": "wafer",
+    "namespace": "forge"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "_fv": 24,
+  "_type": "musicdisc",
+  "definition": {
+    "texture": "polypian_night_disc",
+    "name": "Polypian Night",
+    "description": "Polypian Night",
+    "creativeTab": {
+      "value": "MISC"
+    },
+    "music": {
+      "value": "CUSTOM:polypian-night"
+    },
+    "specialInfo": [],
+    "hasGlow": false
+  }
+}

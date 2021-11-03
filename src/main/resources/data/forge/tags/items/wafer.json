@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "extra_additions:iron_wafer",
+    "extra_additions:gold_wafer",
+    "extra_additions:copper_wafer",
+    "extra_additions:silicone_wafer"
+  ]
+}
