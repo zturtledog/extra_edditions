@@ -1,15 +1,21 @@
 
 package net.twallowhavenstudios.extraadditions.item;
 
+import net.twallowhavenstudios.extraadditions.procedures.TagItemInInventoryTickProcedure;
 import net.twallowhavenstudios.extraadditions.itemgroup.ProssesingItemGroup;
 import net.twallowhavenstudios.extraadditions.ExtraAdditionsModElements;
 
 import net.minecraftforge.registries.ObjectHolder;
 
+import net.minecraft.world.World;
 import net.minecraft.item.Rarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item;
+import net.minecraft.entity.Entity;
 import net.minecraft.block.BlockState;
+
+import java.util.Map;
+import java.util.HashMap;
 
 @ExtraAdditionsModElements.ModElement.Tag
 public class TagItem extends ExtraAdditionsModElements.ModElement {
@@ -42,6 +48,20 @@ public class TagItem extends ExtraAdditionsModElements.ModElement {
 		@Override
 		public float getDestroySpeed(ItemStack par1ItemStack, BlockState par2Block) {
 			return 1F;
+		}
+
+		@Override
+		public void inventoryTick(ItemStack itemstack, World world, Entity entity, int slot, boolean selected) {
+			super.inventoryTick(itemstack, world, entity, slot, selected);
+			double x = entity.getPosX();
+			double y = entity.getPosY();
+			double z = entity.getPosZ();
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				$_dependencies.put("itemstack", itemstack);
+				TagItemInInventoryTickProcedure.executeProcedure($_dependencies);
+			}
 		}
 	}
 }

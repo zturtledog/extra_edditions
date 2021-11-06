@@ -49,6 +49,8 @@ public class ExtraAdditionsModElements {
 				new net.minecraft.util.SoundEvent(new ResourceLocation("extra_additions", "coruptedisc")));
 		sounds.put(new ResourceLocation("extra_additions", "seventhmoon"),
 				new net.minecraft.util.SoundEvent(new ResourceLocation("extra_additions", "seventhmoon")));
+		sounds.put(new ResourceLocation("extra_additions", "polypian-night"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("extra_additions", "polypian-night")));
 		try {
 			ModFileScanData modFileInfo = ModList.get().getModFileById("extra_additions").getFile().getScanResult();
 			Set<ModFileScanData.AnnotationData> annotations = modFileInfo.getAnnotations();

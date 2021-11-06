@@ -17,5 +17,15 @@
         "stream": false
       }
     ]
+  },
+  "polypian-night": {
+    "category": "record",
+    "subtitle": "subtitles.polypian-night",
+    "sounds": [
+      {
+        "name": "extra_additions:polypiannight",
+        "stream": true
+      }
+    ]
   }
 }

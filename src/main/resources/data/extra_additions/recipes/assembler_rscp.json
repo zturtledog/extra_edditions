@@ -1,0 +1,42 @@
+{
+  "group": "extra_additions",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "extra_additions:drillbit"
+    },
+    "1": {
+      "item": "minecraft:piston"
+    },
+    "2": {
+      "item": "minecraft:gold_ingot"
+    },
+    "3": {
+      "item": "extra_additions:silicone_wafer"
+    },
+    "4": {
+      "item": "extra_additions:machine_frame"
+    },
+    "5": {
+      "item": "minecraft:iron_ingot"
+    },
+    "6": {
+      "item": "extra_additions:gold_wafer"
+    },
+    "7": {
+      "item": "minecraft:iron_block"
+    },
+    "8": {
+      "item": "extra_additions:drillbit"
+    }
+  },
+  "result": {
+    "item": "extra_additions:assembler",
+    "count": 1
+  }
+}
