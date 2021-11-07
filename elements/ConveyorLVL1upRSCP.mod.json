@@ -1,0 +1,46 @@
+{
+  "_fv": 24,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 1,
+    "group": "",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "Items.LEATHER"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "Blocks.NORMAL_STONE_SLAB"
+      },
+      {
+        "value": "Items.LEATHER"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "Blocks.PISTON"
+      },
+      {
+        "value": "Blocks.NORMAL_STONE_SLAB"
+      },
+      {
+        "value": "Items.LEATHER"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:UpConveyor0"
+    },
+    "name": "conveyor_lvl_1up_rscp",
+    "namespace": "mod"
+  }
+}

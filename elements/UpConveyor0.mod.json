@@ -2,7 +2,7 @@
   "_fv": 24,
   "_type": "block",
   "definition": {
-    "texture": "ucontex",
+    "texture": "ucontex1",
     "textureTop": "",
     "textureLeft": "",
     "textureFront": "",
@@ -32,7 +32,7 @@
         "subtract": false
       }
     ],
-    "name": "Up Conveyor Lvl 2",
+    "name": "Up Conveyor Lvl 1",
     "specialInfo": [],
     "hardness": 1.0,
     "resistance": 10.0,

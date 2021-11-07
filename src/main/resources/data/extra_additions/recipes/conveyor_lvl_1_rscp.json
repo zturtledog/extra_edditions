@@ -1,0 +1,32 @@
+{
+  "group": "extra_additions",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:leather"
+    },
+    "1": {
+      "item": "minecraft:leather"
+    },
+    "2": {
+      "item": "minecraft:leather"
+    },
+    "3": {
+      "item": "minecraft:stone_slab"
+    },
+    "4": {
+      "item": "minecraft:piston"
+    },
+    "5": {
+      "item": "minecraft:stone_slab"
+    }
+  },
+  "result": {
+    "item": "extra_additions:conveyorlvl_0",
+    "count": 1
+  }
+}

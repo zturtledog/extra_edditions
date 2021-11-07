@@ -1,0 +1,32 @@
+{
+  "group": "extra_additions",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345"
+  ],
+  "key": {
+    "0": {
+      "item": "extra_additions:plastic"
+    },
+    "1": {
+      "item": "extra_additions:plastic"
+    },
+    "2": {
+      "item": "extra_additions:plastic"
+    },
+    "3": {
+      "item": "minecraft:smooth_quartz_slab"
+    },
+    "4": {
+      "item": "minecraft:piston"
+    },
+    "5": {
+      "item": "minecraft:quartz_slab"
+    }
+  },
+  "result": {
+    "item": "extra_additions:conveyorlvl_1",
+    "count": 1
+  }
+}

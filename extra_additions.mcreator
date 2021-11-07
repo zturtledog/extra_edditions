@@ -1309,6 +1309,90 @@
       "ids": {},
       "registry_name": "blu_crete_rscp",
       "path": "~/recipies"
+    },
+    {
+      "name": "ConveyorLVL1RSCP",
+      "type": "recipe",
+      "sortid": 89,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "conveyor_lvl_1_rscp",
+      "path": "~/recipies"
+    },
+    {
+      "name": "ConveyorLVL2RSCP",
+      "type": "recipe",
+      "sortid": 90,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "conveyor_lvl_2_rscp",
+      "path": "~/recipies"
+    },
+    {
+      "name": "ConveyorLVL1upRSCP",
+      "type": "recipe",
+      "sortid": 91,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "conveyor_lvl_1up_rscp",
+      "path": "~/recipies"
+    },
+    {
+      "name": "ConveyorLVL2upRSCP",
+      "type": "recipe",
+      "sortid": 92,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "conveyor_lvl_2up_rscp",
+      "path": "~/recipies"
+    },
+    {
+      "name": "UpConveyor0",
+      "type": "block",
+      "sortid": 93,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "up_conveyor_0",
+      "path": "~/conveyor"
+    },
+    {
+      "name": "UpConveyorlvl0EntityWalksOnTheBlock",
+      "type": "procedure",
+      "sortid": 94,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "up_conveyorlvl_0_entity_walks_on_the_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/conveyor"
     }
   ],
   "variable_elements": [],
@@ -1343,6 +1427,7 @@
       "item.extra_additions.capacitor": "Capacitor",
       "block.extra_additions.glowing_blucrete": "Glowing Blucrete",
       "item.extra_additions.silicone": "Silicone",
+      "block.extra_additions.up_conveyor_0": "Up Conveyor Lvl 1",
       "item.extra_additions.transistor": "Transistor",
       "item.extra_additions.tag": "Tag",
       "item.extra_additions.silicone_wafer": "Silicone Wafer",

@@ -5,6 +5,12 @@
         "0": "ucontex"
       },
       "name": "default"
+    },
+    "bees": {
+      "map": {
+        "0": "ucontex1"
+      },
+      "name": "bees"
     }
   }
 }

@@ -48,11 +48,11 @@ import java.util.HashMap;
 import java.util.Collections;
 
 @ExtraAdditionsModElements.ModElement.Tag
-public class UpConveyorLvl1Block extends ExtraAdditionsModElements.ModElement {
-	@ObjectHolder("extra_additions:up_conveyor_lvl_1")
+public class UpConveyor0Block extends ExtraAdditionsModElements.ModElement {
+	@ObjectHolder("extra_additions:up_conveyor_0")
 	public static final Block block = null;
-	public UpConveyorLvl1Block(ExtraAdditionsModElements instance) {
-		super(instance, 41);
+	public UpConveyor0Block(ExtraAdditionsModElements instance) {
+		super(instance, 93);
 	}
 
 	@Override
@@ -73,7 +73,7 @@ public class UpConveyorLvl1Block extends ExtraAdditionsModElements.ModElement {
 			super(Block.Properties.create(Material.SPONGE).sound(SoundType.CLOTH).hardnessAndResistance(1f, 10f).setLightLevel(s -> 0).notSolid()
 					.setOpaque((bs, br, bp) -> false));
 			this.setDefaultState(this.stateContainer.getBaseState().with(FACING, Direction.NORTH).with(WATERLOGGED, false));
-			setRegistryName("up_conveyor_lvl_1");
+			setRegistryName("up_conveyor_0");
 		}
 
 		@Override
