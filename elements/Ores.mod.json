@@ -2,9 +2,9 @@
   "_fv": 24,
   "_type": "tab",
   "definition": {
-    "name": "Prossesing Items",
+    "name": "Ores",
     "icon": {
-      "value": "CUSTOM:Silicone"
+      "value": "CUSTOM:TabIconOres"
     },
     "showSearch": false
   }

@@ -47,6 +47,19 @@
           "x": 214,
           "y": 86
         }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "please not that the wiki only suports machines at the moment, because of lazyness",
+          "color": {
+            "value": -6710887,
+            "falpha": 0.0
+          },
+          "name": "please not that the wiki only suports machines at the moment, because of lazyness",
+          "x": 19,
+          "y": 160
+        }
       }
     ],
     "gridSettings": {

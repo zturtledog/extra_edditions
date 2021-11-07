@@ -1261,16 +1261,6 @@
       "path": "~/power"
     },
     {
-      "name": "ProssesingItems",
-      "type": "tab",
-      "sortid": 86,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "prossesing_items",
-      "path": "~/tabs"
-    },
-    {
       "name": "MachineFrame",
       "type": "block",
       "sortid": 86,
@@ -1278,7 +1268,7 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "machine_frame",
-      "path": "~/cosmetic_usefillness"
+      "path": "~/asthetic"
     },
     {
       "name": "ExtractorRSCP",
@@ -1393,6 +1383,66 @@
         ]
       },
       "path": "~/conveyor"
+    },
+    {
+      "name": "SolarPannelRSCP",
+      "type": "recipe",
+      "sortid": 95,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "solar_pannel_rscp",
+      "path": "~/recipies"
+    },
+    {
+      "name": "TabIconOres",
+      "type": "item",
+      "sortid": 96,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "tab_icon_ores",
+      "path": "~/tabs"
+    },
+    {
+      "name": "Ores",
+      "type": "tab",
+      "sortid": 96,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ores",
+      "path": "~/tabs"
+    },
+    {
+      "name": "CopperOre",
+      "type": "block",
+      "sortid": 96,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "copper_ore",
+      "path": "~/ore"
+    },
+    {
+      "name": "ExtractorADVAN",
+      "type": "achievement",
+      "sortid": 97,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "extractor_advan",
+      "path": "~/advance_advancements"
+    },
+    {
+      "name": "WaferCutterADVAN",
+      "type": "achievement",
+      "sortid": 98,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wafer_cutter_advan",
+      "path": "~/advance_advancements"
     }
   ],
   "variable_elements": [],
@@ -1434,6 +1484,7 @@
       "item.extra_additions.seventh_moon.desc": "--",
       "item.extra_additions.fezz_armor_leggings": "Fezz Leggings",
       "advancements.wafer_advan.title": "Ultimate frisbee!",
+      "advancements.wafer_cutter_advan.title": "Not waffles, but pancakes!",
       "block.extra_additions.wafer_cutter": "Wafer Cutter",
       "item.extra_additions.copper_wafer": "Copper Wafer",
       "itemGroup.tabprossesing": "Prossesing",
@@ -1450,8 +1501,8 @@
       "key.extra_additions.open_wiki": "Open Wiki",
       "item.extra_additions.seventh_moon": "Seventh Moon",
       "item.extra_additions.shard_launcher": "Shard Launcher",
-      "itemGroup.tabprossesing_items": "Prossesing Items",
       "item.extra_additions.shard": "Shard",
+      "item.extra_additions.tab_icon_ores": "Tab Icon Ores",
       "block.extra_additions.up_conveyor_lvl_1": "Up Conveyor Lvl 2",
       "block.extra_additions.extractor": "Extractor",
       "block.extra_additions.cable_junction": "Cable Junction",
@@ -1460,8 +1511,10 @@
       "item.extra_additions.iron_wafer": "Iron Wafer",
       "itemGroup.tabitems": "Items",
       "item.extra_additions.polypian_night": "Polypian Night",
+      "advancements.extractor_advan.descr": "get the extractor",
       "item.extra_additions.fezz_armor_chestplate": "Fezz Chestplate",
       "block.extra_additions.cable": "Cable",
+      "advancements.extractor_advan.title": "two rights make a better right",
       "block.extra_additions.machine_frame": "Machine Frame",
       "item.extra_additions.coruptedisc": "Coruptedisc",
       "advancements.assembler_advan.title": "Assemblers, Assemble!",
@@ -1473,10 +1526,13 @@
       "block.extra_additions.conveyorlvl_1": "Conveyor lvl 2",
       "block.extra_additions.macinetemplate": "Macinetemplate",
       "subtitles.polypian-night": "polypian Night by: confusedParrotfish",
+      "advancements.wafer_cutter_advan.descr": "get the Wafer Cutter",
+      "itemGroup.tabores": "Ores",
       "item.extra_additions.fezz_armor_helmet": "Fezz",
       "item.extra_additions.coruptedisc.desc": "--",
       "item.extra_additions.drillbit": "Drillbit",
       "item.extra_additions.fezz_armor_boots": "Fezz Boots",
+      "block.extra_additions.copper_ore": "Copper Ore",
       "item.extra_additions.plastic": "Plastic"
     }
   },
@@ -1555,7 +1611,7 @@
         "children": []
       },
       {
-        "name": "cosmetic_usefillness",
+        "name": "ore",
         "children": []
       }
     ]
@@ -1563,12 +1619,13 @@
   "workspaceSettings": {
     "modid": "extra_additions",
     "modName": "extra_additions",
-    "version": "1.0.0",
-    "author": "twallowhavenstudios, thepinkantfoundation",
-    "websiteURL": "https://mcreator.net",
+    "version": "EE-00.00.038",
+    "author": "twallowhavenstudios",
+    "websiteURL": "https://sites.google.com/view/extra-edittions/home?authuser\u003d1",
     "license": "Academic Free License v3.0",
     "disableForgeVersionCheck": true,
     "serverSideOnly": false,
+    "modPicture": "ee-logo",
     "requiredMods": [],
     "dependencies": [],
     "dependants": [],

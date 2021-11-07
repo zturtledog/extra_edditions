@@ -102,6 +102,19 @@
           "x": 240,
           "y": 89
         }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "Wafer Cutter",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Wafer Cutter",
+          "x": 231,
+          "y": 44
+        }
       }
     ],
     "gridSettings": {

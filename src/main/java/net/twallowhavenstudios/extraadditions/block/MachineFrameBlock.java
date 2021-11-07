@@ -1,7 +1,7 @@
 
 package net.twallowhavenstudios.extraadditions.block;
 
-import net.twallowhavenstudios.extraadditions.itemgroup.ProssesingItemsItemGroup;
+import net.twallowhavenstudios.extraadditions.itemgroup.ItemsItemGroup;
 import net.twallowhavenstudios.extraadditions.ExtraAdditionsModElements;
 
 import net.minecraftforge.registries.ObjectHolder;
@@ -39,8 +39,7 @@ public class MachineFrameBlock extends ExtraAdditionsModElements.ModElement {
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new CustomBlock());
-		elements.items
-				.add(() -> new BlockItem(block, new Item.Properties().group(ProssesingItemsItemGroup.tab)).setRegistryName(block.getRegistryName()));
+		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(ItemsItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
 
 	@Override

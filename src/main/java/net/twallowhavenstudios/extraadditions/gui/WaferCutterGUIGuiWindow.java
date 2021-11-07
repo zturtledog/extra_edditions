@@ -80,6 +80,7 @@ public class WaferCutterGUIGuiWindow extends ContainerScreen<WaferCutterGUIGui.G
 			}
 		}.getValue(new BlockPos((int) x, (int) y, (int) z), "prog")) + "", 25, 38, -12829636);
 		this.font.drawString(ms, "power:", 78, 52, -12829636);
+		this.font.drawString(ms, "Wafer Cutter", 105, 7, -12829636);
 	}
 
 	@Override

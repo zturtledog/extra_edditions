@@ -68,7 +68,7 @@ public class AssemblerExecuteProcedure {
 				}
 				return _retval.get();
 			}
-		}.getAmount(world, new BlockPos((int) x, (int) y, (int) z), (int) (5))) >= 2) && ((new Object() {
+		}.getAmount(world, new BlockPos((int) x, (int) y, (int) z), (int) (5))) >= 3) && ((new Object() {
 			public ItemStack getItemStack(BlockPos pos, int sltid) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
 				TileEntity _ent = world.getTileEntity(pos);

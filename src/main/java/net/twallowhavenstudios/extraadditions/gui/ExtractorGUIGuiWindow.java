@@ -80,6 +80,7 @@ public class ExtractorGUIGuiWindow extends ContainerScreen<ExtractorGUIGui.GuiCo
 			}
 		}.getValue(new BlockPos((int) x, (int) y, (int) z), "prog")) + "", 25, 38, -12829636);
 		this.font.drawString(ms, "power:", 78, 52, -12829636);
+		this.font.drawString(ms, "Extractor", 123, 7, -12829636);
 	}
 
 	@Override
