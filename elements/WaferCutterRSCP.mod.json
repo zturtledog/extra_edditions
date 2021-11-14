@@ -1,0 +1,46 @@
+{
+  "_fv": 24,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 1,
+    "group": "",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:Plastic"
+      },
+      {
+        "value": "CUSTOM:MachineFrame"
+      },
+      {
+        "value": "CUSTOM:Plastic"
+      },
+      {
+        "value": "CUSTOM:CopperIngot"
+      },
+      {
+        "value": "CUSTOM:Drillbit"
+      },
+      {
+        "value": "CUSTOM:CopperIngot"
+      },
+      {
+        "value": "CUSTOM:Plastic"
+      },
+      {
+        "value": "Items.REDSTONE"
+      },
+      {
+        "value": "CUSTOM:Plastic"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:WaferCutter"
+    },
+    "name": "wafer_cutter_rscp",
+    "namespace": "mod"
+  }
+}

@@ -3,6 +3,6 @@
   "textures": {
     "all": "extra_additions:blocks/ucontex1",
     "particle": "extra_additions:blocks/ucontex1",
-    "0": "extra_additions:blocks/ucontex"
+    "0": "extra_additions:blocks/ucontex1"
   }
 }

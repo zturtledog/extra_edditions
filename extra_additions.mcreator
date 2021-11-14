@@ -1667,6 +1667,46 @@
         ]
       },
       "path": "~/computing"
+    },
+    {
+      "name": "ComputerRSCP",
+      "type": "recipe",
+      "sortid": 107,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "computer_rscp",
+      "path": "~/recipies"
+    },
+    {
+      "name": "MachineFrameRSCP",
+      "type": "recipe",
+      "sortid": 108,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "machine_frame_rscp",
+      "path": "~/recipies"
+    },
+    {
+      "name": "WaferCutterRSCP",
+      "type": "recipe",
+      "sortid": 109,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wafer_cutter_rscp",
+      "path": "~/recipies"
+    },
+    {
+      "name": "CopperIngotRSCP",
+      "type": "recipe",
+      "sortid": 110,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "copper_ingot_rscp",
+      "path": "~/recipies"
     }
   ],
   "variable_elements": [],
