@@ -1,0 +1,408 @@
+{
+  "_fv": 24,
+  "_type": "gui",
+  "definition": {
+    "type": 1,
+    "width": 234,
+    "height": 167,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "computer",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "computer",
+          "x": 212,
+          "y": 43
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "inventory",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "inventory",
+          "x": 109,
+          "y": 44
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "id": 0,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #0",
+          "x": 105,
+          "y": 62
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "id": 1,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #1",
+          "x": 123,
+          "y": 62
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "id": 2,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #2",
+          "x": 141,
+          "y": 62
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "id": 3,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #3",
+          "x": 105,
+          "y": 80
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "id": 4,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #4",
+          "x": 123,
+          "y": 80
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "id": 5,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #5",
+          "x": 141,
+          "y": 80
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "id": 6,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #6",
+          "x": 105,
+          "y": 98
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "id": 7,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #7",
+          "x": 123,
+          "y": 98
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "id": 8,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #8",
+          "x": 141,
+          "y": 98
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "path",
+          "width": 120,
+          "height": 20,
+          "name": "path",
+          "x": 168,
+          "y": 67
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "path: <BNBT:text:path>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "path: <BNBT:text:path>",
+          "x": 168,
+          "y": 58
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "modifiers",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "modifiers",
+          "x": 281,
+          "y": 49
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "id": 9,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #9",
+          "x": 300,
+          "y": 70
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "id": 10,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #10",
+          "x": 300,
+          "y": 88
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "id": 11,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #11",
+          "x": 300,
+          "y": 106
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "file name",
+          "width": 120,
+          "height": 20,
+          "name": "file",
+          "x": 168,
+          "y": 97
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "file: <BNBT:text:file>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "file: <BNBT:text:file>",
+          "x": 168,
+          "y": 87
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "save",
+          "onClick": {
+            "name": "ComputerGUIonsavePressed"
+          },
+          "width": 30,
+          "height": 20,
+          "name": "save",
+          "x": 295,
+          "y": 130
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "0",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "0",
+          "x": 111,
+          "y": 66
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "1",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "1",
+          "x": 129,
+          "y": 66
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "2",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "2",
+          "x": 147,
+          "y": 66
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "3",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "3",
+          "x": 111,
+          "y": 84
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "4",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "4",
+          "x": 129,
+          "y": 84
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "5",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "5",
+          "x": 147,
+          "y": 83
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "6",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "6",
+          "x": 111,
+          "y": 101
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "7",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "7",
+          "x": 129,
+          "y": 101
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "8",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "8",
+          "x": 146,
+          "y": 101
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}
