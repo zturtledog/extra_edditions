@@ -24,6 +24,7 @@ import java.util.Collections;
 public class GlowingBlucreteBlock extends ExtraAdditionsModElements.ModElement {
 	@ObjectHolder("extra_additions:glowing_blucrete")
 	public static final Block block = null;
+
 	public GlowingBlucreteBlock(ExtraAdditionsModElements instance) {
 		super(instance, 29);
 	}
@@ -33,6 +34,7 @@ public class GlowingBlucreteBlock extends ExtraAdditionsModElements.ModElement {
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(AsteticItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
+
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(1f, 10f).setLightLevel(s -> 15));

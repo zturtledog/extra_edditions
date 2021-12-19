@@ -15,6 +15,7 @@ import net.minecraft.block.BlockState;
 public class TransistorItem extends ExtraAdditionsModElements.ModElement {
 	@ObjectHolder("extra_additions:transistor")
 	public static final Item block = null;
+
 	public TransistorItem(ExtraAdditionsModElements instance) {
 		super(instance, 19);
 	}
@@ -23,6 +24,7 @@ public class TransistorItem extends ExtraAdditionsModElements.ModElement {
 	public void initElements() {
 		elements.items.add(() -> new ItemCustom());
 	}
+
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			super(new Item.Properties().group(ItemsItemGroup.tab).maxStackSize(64).rarity(Rarity.COMMON));

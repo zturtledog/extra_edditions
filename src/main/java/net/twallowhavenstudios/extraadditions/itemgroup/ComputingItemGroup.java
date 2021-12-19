@@ -31,5 +31,6 @@ public class ComputingItemGroup extends ExtraAdditionsModElements.ModElement {
 			}
 		};
 	}
+
 	public static ItemGroup tab;
 }

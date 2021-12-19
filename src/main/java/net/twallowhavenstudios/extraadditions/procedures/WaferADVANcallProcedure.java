@@ -44,6 +44,7 @@ public class WaferADVANcallProcedure {
 			}
 		}
 	}
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
@@ -53,16 +54,15 @@ public class WaferADVANcallProcedure {
 		Entity entity = (Entity) dependencies.get("entity");
 		double i = 0;
 		for (int index0 = 0; index0 < (int) (35); index0++) {
-			if ((ItemTags.getCollection().getTagByID(new ResourceLocation(("forge:wafer").toLowerCase(java.util.Locale.ENGLISH)))
-					.contains((new Object() {
-						public ItemStack getItemStack(int sltid, Entity entity) {
-							AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-							entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
-								_retval.set(capability.getStackInSlot(sltid).copy());
-							});
-							return _retval.get();
-						}
-					}.getItemStack((int) (i), entity)).getItem()))) {
+			if (ItemTags.getCollection().getTagByID(new ResourceLocation("forge:wafer")).contains((new Object() {
+				public ItemStack getItemStack(int sltid, Entity entity) {
+					AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+					entity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+						_retval.set(capability.getStackInSlot(sltid).copy());
+					});
+					return _retval.get();
+				}
+			}.getItemStack((int) (i), entity)).getItem())) {
 				if (entity instanceof ServerPlayerEntity) {
 					Advancement _adv = ((MinecraftServer) ((ServerPlayerEntity) entity).server).getAdvancementManager()
 							.getAdvancement(new ResourceLocation("extra_additions:wafer_advan"));
@@ -76,7 +76,7 @@ public class WaferADVANcallProcedure {
 					}
 				}
 			}
-			i = (double) (i + 1);
+			i = (i + 1);
 		}
 	}
 }

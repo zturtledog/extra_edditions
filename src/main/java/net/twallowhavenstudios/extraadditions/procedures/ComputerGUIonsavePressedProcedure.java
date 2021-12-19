@@ -13,10 +13,11 @@ import java.util.Map;
 import java.util.HashMap;
 
 public class ComputerGUIonsavePressedProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("guistate") == null) {
-			if (!dependencies.containsKey("guistate"))
-				ExtraAdditionsMod.LOGGER.warn("Failed to load dependency guistate for procedure ComputerGUIonsavePressed!");
+		if (dependencies.get("world") == null) {
+			if (!dependencies.containsKey("world"))
+				ExtraAdditionsMod.LOGGER.warn("Failed to load dependency world for procedure ComputerGUIonsavePressed!");
 			return;
 		}
 		if (dependencies.get("x") == null) {
@@ -34,16 +35,16 @@ public class ComputerGUIonsavePressedProcedure {
 				ExtraAdditionsMod.LOGGER.warn("Failed to load dependency z for procedure ComputerGUIonsavePressed!");
 			return;
 		}
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				ExtraAdditionsMod.LOGGER.warn("Failed to load dependency world for procedure ComputerGUIonsavePressed!");
+		if (dependencies.get("guistate") == null) {
+			if (!dependencies.containsKey("guistate"))
+				ExtraAdditionsMod.LOGGER.warn("Failed to load dependency guistate for procedure ComputerGUIonsavePressed!");
 			return;
 		}
-		HashMap guistate = (HashMap) dependencies.get("guistate");
+		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		IWorld world = (IWorld) dependencies.get("world");
+		HashMap guistate = (HashMap) dependencies.get("guistate");
 		if (!world.isRemote()) {
 			BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 			TileEntity _tileEntity = world.getTileEntity(_bp);

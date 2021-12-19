@@ -42,15 +42,18 @@ import net.minecraft.block.HorizontalBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Block;
 
+import java.util.stream.Stream;
 import java.util.Map;
 import java.util.List;
 import java.util.HashMap;
 import java.util.Collections;
+import java.util.AbstractMap;
 
 @ExtraAdditionsModElements.ModElement.Tag
 public class UpConveyorLvl1Block extends ExtraAdditionsModElements.ModElement {
 	@ObjectHolder("extra_additions:up_conveyor_lvl_1")
 	public static final Block block = null;
+
 	public UpConveyorLvl1Block(ExtraAdditionsModElements instance) {
 		super(instance, 41);
 	}
@@ -66,9 +69,11 @@ public class UpConveyorLvl1Block extends ExtraAdditionsModElements.ModElement {
 	public void clientLoad(FMLClientSetupEvent event) {
 		RenderTypeLookup.setRenderLayer(block, RenderType.getCutout());
 	}
+
 	public static class CustomBlock extends Block implements IWaterLoggable {
 		public static final DirectionProperty FACING = HorizontalBlock.HORIZONTAL_FACING;
 		public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
+
 		public CustomBlock() {
 			super(Block.Properties.create(Material.SPONGE).sound(SoundType.CLOTH).hardnessAndResistance(1f, 10f).setLightLevel(s -> 0).notSolid()
 					.setOpaque((bs, br, bp) -> false));
@@ -92,13 +97,29 @@ public class UpConveyorLvl1Block extends ExtraAdditionsModElements.ModElement {
 			switch ((Direction) state.get(FACING)) {
 				case SOUTH :
 				default :
-					return VoxelShapes.or(makeCuboidShape(16, 0, 16, 0, 8, 8)).withOffset(offset.x, offset.y, offset.z);
+					return VoxelShapes.or(makeCuboidShape(16, 0, 16, 0, 8, 8)
+
+					)
+
+							.withOffset(offset.x, offset.y, offset.z);
 				case NORTH :
-					return VoxelShapes.or(makeCuboidShape(0, 0, 0, 16, 8, 8)).withOffset(offset.x, offset.y, offset.z);
+					return VoxelShapes.or(makeCuboidShape(0, 0, 0, 16, 8, 8)
+
+					)
+
+							.withOffset(offset.x, offset.y, offset.z);
 				case EAST :
-					return VoxelShapes.or(makeCuboidShape(16, 0, 0, 8, 8, 16)).withOffset(offset.x, offset.y, offset.z);
+					return VoxelShapes.or(makeCuboidShape(16, 0, 0, 8, 8, 16)
+
+					)
+
+							.withOffset(offset.x, offset.y, offset.z);
 				case WEST :
-					return VoxelShapes.or(makeCuboidShape(0, 0, 16, 8, 8, 0)).withOffset(offset.x, offset.y, offset.z);
+					return VoxelShapes.or(makeCuboidShape(0, 0, 16, 8, 8, 0)
+
+					)
+
+							.withOffset(offset.x, offset.y, offset.z);
 			}
 		}
 
@@ -150,15 +171,11 @@ public class UpConveyorLvl1Block extends ExtraAdditionsModElements.ModElement {
 			int y = pos.getY();
 			int z = pos.getZ();
 			BlockState blockstate = world.getBlockState(pos);
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				$_dependencies.put("x", x);
-				$_dependencies.put("y", y);
-				$_dependencies.put("z", z);
-				$_dependencies.put("world", world);
-				UpConveyorlvl1EntityWalksOnTheBlockProcedure.executeProcedure($_dependencies);
-			}
+
+			UpConveyorlvl1EntityWalksOnTheBlockProcedure.executeProcedure(Stream
+					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
+							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 	}
 }

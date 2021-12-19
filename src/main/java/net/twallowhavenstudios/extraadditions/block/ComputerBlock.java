@@ -1,7 +1,6 @@
 
 package net.twallowhavenstudios.extraadditions.block;
 
-import net.twallowhavenstudios.extraadditions.procedures.ThisisthertherdtimethatinhsqwarehadtoreastartstheinffdfileebecauseeofsutipifgddfvcompurtersfireszztsbecaussetofnotwolerrdffcnowbecauseofstupidparentalshitProcedure;
 import net.twallowhavenstudios.extraadditions.procedures.ComputerRedstoneOnProcedure;
 import net.twallowhavenstudios.extraadditions.procedures.ComputerRedstoneOffProcedure;
 import net.twallowhavenstudios.extraadditions.itemgroup.ProssesingItemGroup;
@@ -62,12 +61,14 @@ import net.minecraft.block.Block;
 
 import javax.annotation.Nullable;
 
+import java.util.stream.Stream;
 import java.util.stream.IntStream;
 import java.util.Random;
 import java.util.Map;
 import java.util.List;
 import java.util.HashMap;
 import java.util.Collections;
+import java.util.AbstractMap;
 
 import io.netty.buffer.Unpooled;
 
@@ -77,6 +78,7 @@ public class ComputerBlock extends ExtraAdditionsModElements.ModElement {
 	public static final Block block = null;
 	@ObjectHolder("extra_additions:computer")
 	public static final TileEntityType<CustomTileEntity> tileEntityType = null;
+
 	public ComputerBlock(ExtraAdditionsModElements instance) {
 		super(instance, 99);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new TileEntityRegisterHandler());
@@ -87,6 +89,7 @@ public class ComputerBlock extends ExtraAdditionsModElements.ModElement {
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(ProssesingItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
+
 	private static class TileEntityRegisterHandler {
 		@SubscribeEvent
 		public void registerTileEntity(RegistryEvent.Register<TileEntityType<?>> event) {
@@ -96,6 +99,7 @@ public class ComputerBlock extends ExtraAdditionsModElements.ModElement {
 
 	public static class CustomBlock extends Block {
 		public static final DirectionProperty FACING = HorizontalBlock.HORIZONTAL_FACING;
+
 		public CustomBlock() {
 			super(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(1f, 10f).setLightLevel(s -> 0));
 			this.setDefaultState(this.stateContainer.getBaseState().with(FACING, Direction.NORTH));
@@ -140,7 +144,7 @@ public class ComputerBlock extends ExtraAdditionsModElements.ModElement {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
-			world.getPendingBlockTicks().scheduleTick(new BlockPos(x, y, z), this, 10);
+			world.getPendingBlockTicks().scheduleTick(pos, this, 10);
 		}
 
 		@Override
@@ -150,23 +154,17 @@ public class ComputerBlock extends ExtraAdditionsModElements.ModElement {
 			int y = pos.getY();
 			int z = pos.getZ();
 			if (world.getRedstonePowerFromNeighbors(new BlockPos(x, y, z)) > 0) {
-				{
-					Map<String, Object> $_dependencies = new HashMap<>();
-					$_dependencies.put("x", x);
-					$_dependencies.put("y", y);
-					$_dependencies.put("z", z);
-					$_dependencies.put("world", world);
-					ComputerRedstoneOnProcedure.executeProcedure($_dependencies);
-				}
+
+				ComputerRedstoneOnProcedure.executeProcedure(Stream
+						.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
+								new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z))
+						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			} else {
-				{
-					Map<String, Object> $_dependencies = new HashMap<>();
-					$_dependencies.put("x", x);
-					$_dependencies.put("y", y);
-					$_dependencies.put("z", z);
-					$_dependencies.put("world", world);
-					ComputerRedstoneOffProcedure.executeProcedure($_dependencies);
-				}
+
+				ComputerRedstoneOffProcedure.executeProcedure(Stream
+						.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
+								new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z))
+						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 		}
 
@@ -176,16 +174,13 @@ public class ComputerBlock extends ExtraAdditionsModElements.ModElement {
 			int x = pos.getX();
 			int y = pos.getY();
 			int z = pos.getZ();
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("x", x);
-				$_dependencies.put("y", y);
-				$_dependencies.put("z", z);
-				$_dependencies.put("world", world);
-				ThisisthertherdtimethatinhsqwarehadtoreastartstheinffdfileebecauseeofsutipifgddfvcompurtersfireszztsbecaussetofnotwolerrdffcnowbecauseofstupidparentalshitProcedure
-						.executeProcedure($_dependencies);
-			}
-			world.getPendingBlockTicks().scheduleTick(new BlockPos(x, y, z), this, 10);
+
+			ThisisthertherdtimethatinhsqwarehadtoreastartstheinffdfileebecauseeofsutipifgddfvcompurtersfireszztsbecaussetofnotwolerrdffcnowbecauseofstupidparentalshitProcedure
+					.executeProcedure(Stream
+							.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
+									new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z))
+							.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+			world.getPendingBlockTicks().scheduleTick(pos, this, 10);
 		}
 
 		@Override
@@ -243,6 +238,7 @@ public class ComputerBlock extends ExtraAdditionsModElements.ModElement {
 					InventoryHelper.dropInventoryItems(world, pos, (CustomTileEntity) tileentity);
 					world.updateComparatorOutputLevel(pos, this);
 				}
+
 				super.onReplaced(state, world, pos, newState, isMoving);
 			}
 		}
@@ -264,6 +260,7 @@ public class ComputerBlock extends ExtraAdditionsModElements.ModElement {
 
 	public static class CustomTileEntity extends LockableLootTileEntity implements ISidedInventory {
 		private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(12, ItemStack.EMPTY);
+
 		protected CustomTileEntity() {
 			super(tileEntityType);
 		}
@@ -387,7 +384,9 @@ public class ComputerBlock extends ExtraAdditionsModElements.ModElement {
 				return false;
 			return true;
 		}
+
 		private final LazyOptional<? extends IItemHandler>[] handlers = SidedInvWrapper.create(this, Direction.values());
+
 		@Override
 		public <T> LazyOptional<T> getCapability(Capability<T> capability, @Nullable Direction facing) {
 			if (!this.removed && facing != null && capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)

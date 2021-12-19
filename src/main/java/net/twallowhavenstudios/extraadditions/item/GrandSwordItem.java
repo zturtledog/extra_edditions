@@ -21,13 +21,16 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 
+import java.util.stream.Stream;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.AbstractMap;
 
 @ExtraAdditionsModElements.ModElement.Tag
 public class GrandSwordItem extends ExtraAdditionsModElements.ModElement {
 	@ObjectHolder("extra_additions:grand_sword")
 	public static final Item block = null;
+
 	public GrandSwordItem(ExtraAdditionsModElements instance) {
 		super(instance, 32);
 	}
@@ -66,11 +69,9 @@ public class GrandSwordItem extends ExtraAdditionsModElements.ModElement {
 				double x = entity.getPosX();
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
-				{
-					Map<String, Object> $_dependencies = new HashMap<>();
-					$_dependencies.put("entity", entity);
-					GrandSwordRightClickedInAirProcedure.executeProcedure($_dependencies);
-				}
+
+				GrandSwordRightClickedInAirProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity)).collect(HashMap::new,
+						(_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				return retval;
 			}
 
@@ -81,11 +82,9 @@ public class GrandSwordItem extends ExtraAdditionsModElements.ModElement {
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
 				World world = entity.world;
-				{
-					Map<String, Object> $_dependencies = new HashMap<>();
-					$_dependencies.put("entity", entity);
-					GrandSwordLivingEntityIsHitWithToolProcedure.executeProcedure($_dependencies);
-				}
+
+				GrandSwordLivingEntityIsHitWithToolProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
+						.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 				return retval;
 			}
 
@@ -95,11 +94,10 @@ public class GrandSwordItem extends ExtraAdditionsModElements.ModElement {
 				double x = entity.getPosX();
 				double y = entity.getPosY();
 				double z = entity.getPosZ();
-				if (selected) {
-					Map<String, Object> $_dependencies = new HashMap<>();
-					$_dependencies.put("entity", entity);
-					GrandSwordToolInHandTickProcedure.executeProcedure($_dependencies);
-				}
+				if (selected)
+
+					GrandSwordToolInHandTickProcedure.executeProcedure(Stream.of(new AbstractMap.SimpleEntry<>("entity", entity))
+							.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			}
 		}.setRegistryName("grand_sword"));
 	}

@@ -22,14 +22,17 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.client.Minecraft;
 
+import java.util.stream.Stream;
 import java.util.function.Supplier;
 import java.util.Map;
 import java.util.HashMap;
+import java.util.AbstractMap;
 
 @ExtraAdditionsModElements.ModElement.Tag
 public class OpenWikiKeyBinding extends ExtraAdditionsModElements.ModElement {
 	@OnlyIn(Dist.CLIENT)
 	private KeyBinding keys;
+
 	public OpenWikiKeyBinding(ExtraAdditionsModElements instance) {
 		super(instance, 40);
 		elements.addNetworkMessage(KeyBindingPressedMessage.class, KeyBindingPressedMessage::buffer, KeyBindingPressedMessage::new,
@@ -56,8 +59,10 @@ public class OpenWikiKeyBinding extends ExtraAdditionsModElements.ModElement {
 			}
 		}
 	}
+
 	public static class KeyBindingPressedMessage {
 		int type, pressedms;
+
 		public KeyBindingPressedMessage(int type, int pressedms) {
 			this.type = type;
 			this.pressedms = pressedms;
@@ -81,6 +86,7 @@ public class OpenWikiKeyBinding extends ExtraAdditionsModElements.ModElement {
 			context.setPacketHandled(true);
 		}
 	}
+
 	private static void pressAction(PlayerEntity entity, int type, int pressedms) {
 		World world = entity.world;
 		double x = entity.getPosX();
@@ -90,15 +96,11 @@ public class OpenWikiKeyBinding extends ExtraAdditionsModElements.ModElement {
 		if (!world.isBlockLoaded(new BlockPos(x, y, z)))
 			return;
 		if (type == 0) {
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				$_dependencies.put("entity", entity);
-				$_dependencies.put("x", x);
-				$_dependencies.put("y", y);
-				$_dependencies.put("z", z);
-				$_dependencies.put("world", world);
-				HomepageProcedure.executeProcedure($_dependencies);
-			}
+
+			HomepageProcedure.executeProcedure(Stream
+					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
+							new AbstractMap.SimpleEntry<>("z", z), new AbstractMap.SimpleEntry<>("entity", entity))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 		}
 	}
 }

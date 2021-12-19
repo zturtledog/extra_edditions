@@ -29,6 +29,7 @@ public class MainGuiWindow extends ContainerScreen<MainGui.GuiContainerMod> {
 	private PlayerEntity entity;
 	private final static HashMap guistate = MainGui.guistate;
 	TextFieldWidget search;
+
 	public MainGuiWindow(MainGui.GuiContainerMod container, PlayerInventory inventory, ITextComponent text) {
 		super(container, inventory, text);
 		this.world = container.world;
@@ -39,7 +40,9 @@ public class MainGuiWindow extends ContainerScreen<MainGui.GuiContainerMod> {
 		this.xSize = 135;
 		this.ySize = 80;
 	}
+
 	private static final ResourceLocation texture = new ResourceLocation("extra_additions:textures/main.png");
+
 	@Override
 	public void render(MatrixStack ms, int mouseX, int mouseY, float partialTicks) {
 		this.renderBackground(ms);
@@ -97,6 +100,7 @@ public class MainGuiWindow extends ContainerScreen<MainGui.GuiContainerMod> {
 			{
 				setSuggestion("click here to begin");
 			}
+
 			@Override
 			public void writeText(String text) {
 				super.writeText(text);

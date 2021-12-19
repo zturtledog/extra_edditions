@@ -44,6 +44,7 @@ public class ExtraAdditionsModElements {
 	public final List<Supplier<EntityType<?>>> entities = new ArrayList<>();
 	public final List<Supplier<Enchantment>> enchantments = new ArrayList<>();
 	public static Map<ResourceLocation, net.minecraft.util.SoundEvent> sounds = new HashMap<>();
+
 	public ExtraAdditionsModElements() {
 		sounds.put(new ResourceLocation("extra_additions", "coruptedisc"),
 				new net.minecraft.util.SoundEvent(new ResourceLocation("extra_additions", "coruptedisc")));
@@ -72,7 +73,9 @@ public class ExtraAdditionsModElements {
 		for (Map.Entry<ResourceLocation, net.minecraft.util.SoundEvent> sound : sounds.entrySet())
 			event.getRegistry().register(sound.getValue().setRegistryName(sound.getKey()));
 	}
+
 	private int messageID = 0;
+
 	public <T> void addNetworkMessage(Class<T> messageType, BiConsumer<T, PacketBuffer> encoder, Function<PacketBuffer, T> decoder,
 			BiConsumer<T, Supplier<NetworkEvent.Context>> messageConsumer) {
 		ExtraAdditionsMod.PACKET_HANDLER.registerMessage(messageID, messageType, encoder, decoder, messageConsumer);
@@ -98,12 +101,15 @@ public class ExtraAdditionsModElements {
 	public List<Supplier<Enchantment>> getEnchantments() {
 		return enchantments;
 	}
+
 	public static class ModElement implements Comparable<ModElement> {
 		@Retention(RetentionPolicy.RUNTIME)
 		public @interface Tag {
 		}
+
 		protected final ExtraAdditionsModElements elements;
 		protected final int sortid;
+
 		public ModElement(ExtraAdditionsModElements elements, int sortid) {
 			this.elements = elements;
 			this.sortid = sortid;

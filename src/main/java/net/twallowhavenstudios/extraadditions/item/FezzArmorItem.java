@@ -36,6 +36,7 @@ public class FezzArmorItem extends ExtraAdditionsModElements.ModElement {
 	public static final Item legs = null;
 	@ObjectHolder("extra_additions:fezz_armor_boots")
 	public static final Item boots = null;
+
 	public FezzArmorItem(ExtraAdditionsModElements instance) {
 		super(instance, 46);
 	}
@@ -102,11 +103,13 @@ public class FezzArmorItem extends ExtraAdditionsModElements.ModElement {
 			}
 		}.setRegistryName("fezz_armor_helmet"));
 	}
+
 	// Made with Blockbench 3.7.5
 	// Exported for Minecraft version 1.15
 	// Paste this class into your mod and generate all required imports
 	public class custom_model extends EntityModel<Entity> {
 		private final ModelRenderer bb_main;
+
 		public custom_model() {
 			textureWidth = 16;
 			textureHeight = 16;
@@ -117,7 +120,7 @@ public class FezzArmorItem extends ExtraAdditionsModElements.ModElement {
 
 		@Override
 		public void setRotationAngles(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-			// previously the render function, render code was moved to a method below
+			//previously the render function, render code was moved to a method below
 		}
 
 		@Override
@@ -132,4 +135,5 @@ public class FezzArmorItem extends ExtraAdditionsModElements.ModElement {
 			modelRenderer.rotateAngleZ = z;
 		}
 	}
+
 }

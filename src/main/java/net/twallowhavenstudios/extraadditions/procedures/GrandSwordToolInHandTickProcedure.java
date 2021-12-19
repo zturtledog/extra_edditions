@@ -7,6 +7,7 @@ import net.minecraft.entity.Entity;
 import java.util.Map;
 
 public class GrandSwordToolInHandTickProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
@@ -14,7 +15,7 @@ public class GrandSwordToolInHandTickProcedure {
 			return;
 		}
 		Entity entity = (Entity) dependencies.get("entity");
-		if (((Math.random() == 0.1) && (Math.random() == 0.1))) {
+		if (Math.random() == 0.1 && Math.random() == 0.1) {
 			entity.setFire((int) 2);
 		}
 	}

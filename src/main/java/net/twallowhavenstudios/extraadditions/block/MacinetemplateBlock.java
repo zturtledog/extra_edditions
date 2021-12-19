@@ -64,6 +64,7 @@ public class MacinetemplateBlock extends ExtraAdditionsModElements.ModElement {
 	public static final Block block = null;
 	@ObjectHolder("extra_additions:macinetemplate")
 	public static final TileEntityType<CustomTileEntity> tileEntityType = null;
+
 	public MacinetemplateBlock(ExtraAdditionsModElements instance) {
 		super(instance, 2);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new TileEntityRegisterHandler());
@@ -74,6 +75,7 @@ public class MacinetemplateBlock extends ExtraAdditionsModElements.ModElement {
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(ProssesingItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
+
 	private static class TileEntityRegisterHandler {
 		@SubscribeEvent
 		public void registerTileEntity(RegistryEvent.Register<TileEntityType<?>> event) {
@@ -155,6 +157,7 @@ public class MacinetemplateBlock extends ExtraAdditionsModElements.ModElement {
 					InventoryHelper.dropInventoryItems(world, pos, (CustomTileEntity) tileentity);
 					world.updateComparatorOutputLevel(pos, this);
 				}
+
 				super.onReplaced(state, world, pos, newState, isMoving);
 			}
 		}
@@ -176,6 +179,7 @@ public class MacinetemplateBlock extends ExtraAdditionsModElements.ModElement {
 
 	public static class CustomTileEntity extends LockableLootTileEntity implements ISidedInventory {
 		private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(201, ItemStack.EMPTY);
+
 		protected CustomTileEntity() {
 			super(tileEntityType);
 		}
@@ -279,7 +283,9 @@ public class MacinetemplateBlock extends ExtraAdditionsModElements.ModElement {
 				return false;
 			return true;
 		}
+
 		private final LazyOptional<? extends IItemHandler>[] handlers = SidedInvWrapper.create(this, Direction.values());
+
 		@Override
 		public <T> LazyOptional<T> getCapability(Capability<T> capability, @Nullable Direction facing) {
 			if (!this.removed && facing != null && capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)

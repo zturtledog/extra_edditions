@@ -15,6 +15,7 @@ import net.minecraft.block.BlockState;
 public class GoldWaferItem extends ExtraAdditionsModElements.ModElement {
 	@ObjectHolder("extra_additions:gold_wafer")
 	public static final Item block = null;
+
 	public GoldWaferItem(ExtraAdditionsModElements instance) {
 		super(instance, 25);
 	}
@@ -23,6 +24,7 @@ public class GoldWaferItem extends ExtraAdditionsModElements.ModElement {
 	public void initElements() {
 		elements.items.add(() -> new ItemCustom());
 	}
+
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			super(new Item.Properties().group(ItemsItemGroup.tab).maxStackSize(64).rarity(Rarity.COMMON));

@@ -13,10 +13,11 @@ import net.minecraft.block.BlockState;
 import java.util.Map;
 
 public class Conveyorlvl1EntityWalksOnTheBlockProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
-		if (dependencies.get("entity") == null) {
-			if (!dependencies.containsKey("entity"))
-				ExtraAdditionsMod.LOGGER.warn("Failed to load dependency entity for procedure Conveyorlvl1EntityWalksOnTheBlock!");
+		if (dependencies.get("world") == null) {
+			if (!dependencies.containsKey("world"))
+				ExtraAdditionsMod.LOGGER.warn("Failed to load dependency world for procedure Conveyorlvl1EntityWalksOnTheBlock!");
 			return;
 		}
 		if (dependencies.get("x") == null) {
@@ -34,19 +35,19 @@ public class Conveyorlvl1EntityWalksOnTheBlockProcedure {
 				ExtraAdditionsMod.LOGGER.warn("Failed to load dependency z for procedure Conveyorlvl1EntityWalksOnTheBlock!");
 			return;
 		}
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				ExtraAdditionsMod.LOGGER.warn("Failed to load dependency world for procedure Conveyorlvl1EntityWalksOnTheBlock!");
+		if (dependencies.get("entity") == null) {
+			if (!dependencies.containsKey("entity"))
+				ExtraAdditionsMod.LOGGER.warn("Failed to load dependency entity for procedure Conveyorlvl1EntityWalksOnTheBlock!");
 			return;
 		}
-		Entity entity = (Entity) dependencies.get("entity");
+		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		IWorld world = (IWorld) dependencies.get("world");
+		Entity entity = (Entity) dependencies.get("entity");
 		double o1 = 0;
 		double t2 = 0;
-		if (((new Object() {
+		if ((new Object() {
 			public Direction getDirection(BlockPos pos) {
 				try {
 					BlockState _bs = world.getBlockState(pos);
@@ -60,10 +61,10 @@ public class Conveyorlvl1EntityWalksOnTheBlockProcedure {
 					return Direction.NORTH;
 				}
 			}
-		}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.NORTH)) {
-			o1 = (double) (-0.3);
+		}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.NORTH) {
+			o1 = (-0.3);
 		}
-		if (((new Object() {
+		if ((new Object() {
 			public Direction getDirection(BlockPos pos) {
 				try {
 					BlockState _bs = world.getBlockState(pos);
@@ -77,10 +78,10 @@ public class Conveyorlvl1EntityWalksOnTheBlockProcedure {
 					return Direction.NORTH;
 				}
 			}
-		}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.SOUTH)) {
-			o1 = (double) 0.3;
+		}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.SOUTH) {
+			o1 = 0.3;
 		}
-		if (((new Object() {
+		if ((new Object() {
 			public Direction getDirection(BlockPos pos) {
 				try {
 					BlockState _bs = world.getBlockState(pos);
@@ -94,10 +95,10 @@ public class Conveyorlvl1EntityWalksOnTheBlockProcedure {
 					return Direction.NORTH;
 				}
 			}
-		}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.WEST)) {
-			t2 = (double) (-0.3);
+		}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.WEST) {
+			t2 = (-0.3);
 		}
-		if (((new Object() {
+		if ((new Object() {
 			public Direction getDirection(BlockPos pos) {
 				try {
 					BlockState _bs = world.getBlockState(pos);
@@ -111,9 +112,9 @@ public class Conveyorlvl1EntityWalksOnTheBlockProcedure {
 					return Direction.NORTH;
 				}
 			}
-		}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.EAST)) {
-			t2 = (double) 0.3;
+		}.getDirection(new BlockPos((int) x, (int) y, (int) z))) == Direction.EAST) {
+			t2 = 0.3;
 		}
-		entity.setMotion((t2 + (entity.getMotion().getX())), (entity.getMotion().getY()), (o1 + (entity.getMotion().getZ())));
+		entity.setMotion((t2 + entity.getMotion().getX()), (entity.getMotion().getY()), (o1 + entity.getMotion().getZ()));
 	}
 }

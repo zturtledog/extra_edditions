@@ -1,0 +1,116 @@
+{
+  "_fv": 24,
+  "_type": "gui",
+  "definition": {
+    "type": 1,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "fermentation barrel",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "fermentation barrel",
+          "x": 195,
+          "y": 44
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "water: <BNBT:number:fluidlvl>",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "water: <BNBT:number:fluidlvl>",
+          "x": 132,
+          "y": 62
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "grain",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "grain",
+          "x": 245,
+          "y": 78
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "id": 0,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #0",
+          "x": 249,
+          "y": 89
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "add water",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "add water",
+          "x": 135,
+          "y": 78
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "id": 1,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #1",
+          "x": 150,
+          "y": 89
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "seal",
+          "width": 45,
+          "height": 20,
+          "name": "seal",
+          "x": 186,
+          "y": 89
+        }
+      }
+    ],
+    "onTick": {
+      "name": "FermentationBarrelGUIWhileThisGUIIsOpenTick"
+    },
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

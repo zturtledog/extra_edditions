@@ -15,6 +15,7 @@ import net.minecraft.block.BlockState;
 public class CapacitorItem extends ExtraAdditionsModElements.ModElement {
 	@ObjectHolder("extra_additions:capacitor")
 	public static final Item block = null;
+
 	public CapacitorItem(ExtraAdditionsModElements instance) {
 		super(instance, 20);
 	}
@@ -23,6 +24,7 @@ public class CapacitorItem extends ExtraAdditionsModElements.ModElement {
 	public void initElements() {
 		elements.items.add(() -> new ItemCustom());
 	}
+
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			super(new Item.Properties().group(ItemsItemGroup.tab).maxStackSize(64).rarity(Rarity.COMMON));

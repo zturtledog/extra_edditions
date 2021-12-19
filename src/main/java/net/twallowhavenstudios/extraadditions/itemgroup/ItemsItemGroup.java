@@ -31,5 +31,6 @@ public class ItemsItemGroup extends ExtraAdditionsModElements.ModElement {
 			}
 		};
 	}
+
 	public static ItemGroup tab;
 }

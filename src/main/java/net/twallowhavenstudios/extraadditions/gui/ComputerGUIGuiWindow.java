@@ -32,6 +32,7 @@ public class ComputerGUIGuiWindow extends ContainerScreen<ComputerGUIGui.GuiCont
 	private final static HashMap guistate = ComputerGUIGui.guistate;
 	TextFieldWidget path;
 	TextFieldWidget file;
+
 	public ComputerGUIGuiWindow(ComputerGUIGui.GuiContainerMod container, PlayerInventory inventory, ITextComponent text) {
 		super(container, inventory, text);
 		this.world = container.world;
@@ -42,7 +43,9 @@ public class ComputerGUIGuiWindow extends ContainerScreen<ComputerGUIGui.GuiCont
 		this.xSize = 234;
 		this.ySize = 167;
 	}
+
 	private static final ResourceLocation texture = new ResourceLocation("extra_additions:textures/computer_gui.png");
+
 	@Override
 	public void render(MatrixStack ms, int mouseX, int mouseY, float partialTicks) {
 		this.renderBackground(ms);
@@ -95,7 +98,7 @@ public class ComputerGUIGuiWindow extends ContainerScreen<ComputerGUIGui.GuiCont
 					return tileEntity.getTileData().getString(tag);
 				return "";
 			}
-		}.getValue(new BlockPos((int) x, (int) y, (int) z), "path")) + "", 71, 21, -12829636);
+		}.getValue(new BlockPos((int) x, (int) y, (int) z), "path")) + "", 71, 17, -12829636);
 		this.font.drawString(ms, "modifiers", 184, 12, -12829636);
 		this.font.drawString(ms, "file: " + (new Object() {
 			public String getValue(BlockPos pos, String tag) {
@@ -126,10 +129,11 @@ public class ComputerGUIGuiWindow extends ContainerScreen<ComputerGUIGui.GuiCont
 	public void init(Minecraft minecraft, int width, int height) {
 		super.init(minecraft, width, height);
 		minecraft.keyboardListener.enableRepeatEvents(true);
-		path = new TextFieldWidget(this.font, this.guiLeft + 71, this.guiTop + 30, 120, 20, new StringTextComponent("path")) {
+		path = new TextFieldWidget(this.font, this.guiLeft + 71, this.guiTop + 28, 120, 20, new StringTextComponent("path")) {
 			{
 				setSuggestion("path");
 			}
+
 			@Override
 			public void writeText(String text) {
 				super.writeText(text);
@@ -155,6 +159,7 @@ public class ComputerGUIGuiWindow extends ContainerScreen<ComputerGUIGui.GuiCont
 			{
 				setSuggestion("file name");
 			}
+
 			@Override
 			public void writeText(String text) {
 				super.writeText(text);

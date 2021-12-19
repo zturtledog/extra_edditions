@@ -31,5 +31,6 @@ public class OresItemGroup extends ExtraAdditionsModElements.ModElement {
 			}
 		};
 	}
+
 	public static ItemGroup tab;
 }

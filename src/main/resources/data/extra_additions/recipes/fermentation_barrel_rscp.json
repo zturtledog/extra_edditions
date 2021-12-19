@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "3 5",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "tag": "minecraft:planks"
+    },
+    "1": {
+      "tag": "trapdoors"
+    },
+    "2": {
+      "tag": "minecraft:planks"
+    },
+    "3": {
+      "item": "minecraft:iron_ingot"
+    },
+    "5": {
+      "item": "minecraft:iron_ingot"
+    },
+    "6": {
+      "tag": "minecraft:planks"
+    },
+    "7": {
+      "tag": "minecraft:wooden_slabs"
+    },
+    "8": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "result": {
+    "item": "extra_additions:fermentation_barrel",
+    "count": 1
+  }
+}

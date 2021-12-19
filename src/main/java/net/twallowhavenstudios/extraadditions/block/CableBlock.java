@@ -66,6 +66,7 @@ public class CableBlock extends ExtraAdditionsModElements.ModElement {
 	public static final Block block = null;
 	@ObjectHolder("extra_additions:cable")
 	public static final TileEntityType<CustomTileEntity> tileEntityType = null;
+
 	public CableBlock(ExtraAdditionsModElements instance) {
 		super(instance, 4);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new TileEntityRegisterHandler());
@@ -76,19 +77,23 @@ public class CableBlock extends ExtraAdditionsModElements.ModElement {
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(ProssesingItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
+
 	private static class TileEntityRegisterHandler {
 		@SubscribeEvent
 		public void registerTileEntity(RegistryEvent.Register<TileEntityType<?>> event) {
 			event.getRegistry().register(TileEntityType.Builder.create(CustomTileEntity::new, block).build(null).setRegistryName("cable"));
 		}
 	}
+
 	@Override
 	@OnlyIn(Dist.CLIENT)
 	public void clientLoad(FMLClientSetupEvent event) {
 		RenderTypeLookup.setRenderLayer(block, RenderType.getCutout());
 	}
+
 	public static class CustomBlock extends Block {
 		public static final DirectionProperty FACING = DirectionalBlock.FACING;
+
 		public CustomBlock() {
 			super(Block.Properties.create(Material.IRON).sound(SoundType.METAL).hardnessAndResistance(1f, 10f).setLightLevel(s -> 0).notSolid()
 					.setOpaque((bs, br, bp) -> false));
@@ -164,6 +169,7 @@ public class CableBlock extends ExtraAdditionsModElements.ModElement {
 					InventoryHelper.dropInventoryItems(world, pos, (CustomTileEntity) tileentity);
 					world.updateComparatorOutputLevel(pos, this);
 				}
+
 				super.onReplaced(state, world, pos, newState, isMoving);
 			}
 		}
@@ -185,6 +191,7 @@ public class CableBlock extends ExtraAdditionsModElements.ModElement {
 
 	public static class CustomTileEntity extends LockableLootTileEntity implements ISidedInventory {
 		private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(9, ItemStack.EMPTY);
+
 		protected CustomTileEntity() {
 			super(tileEntityType);
 		}
@@ -284,7 +291,9 @@ public class CableBlock extends ExtraAdditionsModElements.ModElement {
 		public boolean canExtractItem(int index, ItemStack stack, Direction direction) {
 			return true;
 		}
+
 		private final LazyOptional<? extends IItemHandler>[] handlers = SidedInvWrapper.create(this, Direction.values());
+
 		@Override
 		public <T> LazyOptional<T> getCapability(Capability<T> capability, @Nullable Direction facing) {
 			if (!this.removed && facing != null && capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)

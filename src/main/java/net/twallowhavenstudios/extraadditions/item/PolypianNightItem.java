@@ -15,6 +15,7 @@ import net.minecraft.item.Item;
 public class PolypianNightItem extends ExtraAdditionsModElements.ModElement {
 	@ObjectHolder("extra_additions:polypian_night")
 	public static final Item block = null;
+
 	public PolypianNightItem(ExtraAdditionsModElements instance) {
 		super(instance, 83);
 	}
@@ -23,6 +24,7 @@ public class PolypianNightItem extends ExtraAdditionsModElements.ModElement {
 	public void initElements() {
 		elements.items.add(() -> new MusicDiscItemCustom());
 	}
+
 	public static class MusicDiscItemCustom extends MusicDiscItem {
 		public MusicDiscItemCustom() {
 			super(0, ExtraAdditionsModElements.sounds.get(new ResourceLocation("extra_additions:polypian-night")),

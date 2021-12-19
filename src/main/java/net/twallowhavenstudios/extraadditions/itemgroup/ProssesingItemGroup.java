@@ -31,5 +31,6 @@ public class ProssesingItemGroup extends ExtraAdditionsModElements.ModElement {
 			}
 		};
 	}
+
 	public static ItemGroup tab;
 }

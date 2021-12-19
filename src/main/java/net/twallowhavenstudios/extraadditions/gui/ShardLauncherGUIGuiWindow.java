@@ -23,6 +23,7 @@ public class ShardLauncherGUIGuiWindow extends ContainerScreen<ShardLauncherGUIG
 	private int x, y, z;
 	private PlayerEntity entity;
 	private final static HashMap guistate = ShardLauncherGUIGui.guistate;
+
 	public ShardLauncherGUIGuiWindow(ShardLauncherGUIGui.GuiContainerMod container, PlayerInventory inventory, ITextComponent text) {
 		super(container, inventory, text);
 		this.world = container.world;
@@ -33,7 +34,9 @@ public class ShardLauncherGUIGuiWindow extends ContainerScreen<ShardLauncherGUIG
 		this.xSize = 176;
 		this.ySize = 166;
 	}
+
 	private static final ResourceLocation texture = new ResourceLocation("extra_additions:textures/shard_launcher_gui.png");
+
 	@Override
 	public void render(MatrixStack ms, int mouseX, int mouseY, float partialTicks) {
 		this.renderBackground(ms);

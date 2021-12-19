@@ -31,5 +31,6 @@ public class AsteticItemGroup extends ExtraAdditionsModElements.ModElement {
 			}
 		};
 	}
+
 	public static ItemGroup tab;
 }

@@ -15,6 +15,7 @@ import net.minecraft.block.BlockState;
 public class ModifiermanipulateItem extends ExtraAdditionsModElements.ModElement {
 	@ObjectHolder("extra_additions:modifiermanipulate")
 	public static final Item block = null;
+
 	public ModifiermanipulateItem(ExtraAdditionsModElements instance) {
 		super(instance, 102);
 	}
@@ -23,6 +24,7 @@ public class ModifiermanipulateItem extends ExtraAdditionsModElements.ModElement
 	public void initElements() {
 		elements.items.add(() -> new ItemCustom());
 	}
+
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			super(new Item.Properties().group(ComputingItemGroup.tab).maxStackSize(64).rarity(Rarity.COMMON));

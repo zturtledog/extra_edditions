@@ -25,6 +25,7 @@ public class AssemblerGUIGuiWindow extends ContainerScreen<AssemblerGUIGui.GuiCo
 	private int x, y, z;
 	private PlayerEntity entity;
 	private final static HashMap guistate = AssemblerGUIGui.guistate;
+
 	public AssemblerGUIGuiWindow(AssemblerGUIGui.GuiContainerMod container, PlayerInventory inventory, ITextComponent text) {
 		super(container, inventory, text);
 		this.world = container.world;
@@ -35,7 +36,9 @@ public class AssemblerGUIGuiWindow extends ContainerScreen<AssemblerGUIGui.GuiCo
 		this.xSize = 176;
 		this.ySize = 166;
 	}
+
 	private static final ResourceLocation texture = new ResourceLocation("extra_additions:textures/assembler_gui.png");
+
 	@Override
 	public void render(MatrixStack ms, int mouseX, int mouseY, float partialTicks) {
 		this.renderBackground(ms);

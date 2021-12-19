@@ -15,6 +15,7 @@ import net.minecraft.item.Item;
 public class SeventhMoonItem extends ExtraAdditionsModElements.ModElement {
 	@ObjectHolder("extra_additions:seventh_moon")
 	public static final Item block = null;
+
 	public SeventhMoonItem(ExtraAdditionsModElements instance) {
 		super(instance, 45);
 	}
@@ -23,6 +24,7 @@ public class SeventhMoonItem extends ExtraAdditionsModElements.ModElement {
 	public void initElements() {
 		elements.items.add(() -> new MusicDiscItemCustom());
 	}
+
 	public static class MusicDiscItemCustom extends MusicDiscItem {
 		public MusicDiscItemCustom() {
 			super(0, ExtraAdditionsModElements.sounds.get(new ResourceLocation("extra_additions:seventhmoon")),

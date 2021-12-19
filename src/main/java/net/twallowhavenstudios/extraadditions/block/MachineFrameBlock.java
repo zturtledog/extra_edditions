@@ -32,6 +32,7 @@ import java.util.Collections;
 public class MachineFrameBlock extends ExtraAdditionsModElements.ModElement {
 	@ObjectHolder("extra_additions:machine_frame")
 	public static final Block block = null;
+
 	public MachineFrameBlock(ExtraAdditionsModElements instance) {
 		super(instance, 86);
 	}
@@ -47,6 +48,7 @@ public class MachineFrameBlock extends ExtraAdditionsModElements.ModElement {
 	public void clientLoad(FMLClientSetupEvent event) {
 		RenderTypeLookup.setRenderLayer(block, RenderType.getCutout());
 	}
+
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.IRON).sound(SoundType.GLASS).hardnessAndResistance(1f, 10f).setLightLevel(s -> 0).notSolid()

@@ -16,6 +16,7 @@ import net.minecraft.client.Minecraft;
 import java.util.Map;
 
 public class TagItemInInventoryTickProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("entity") == null) {
 			if (!dependencies.containsKey("entity"))
@@ -29,7 +30,7 @@ public class TagItemInInventoryTickProcedure {
 		}
 		Entity entity = (Entity) dependencies.get("entity");
 		ItemStack itemstack = (ItemStack) dependencies.get("itemstack");
-		if ((!(new Object() {
+		if (!(new Object() {
 			public boolean checkGamemode(Entity _ent) {
 				if (_ent instanceof ServerPlayerEntity) {
 					return ((ServerPlayerEntity) _ent).interactionManager.getGameType() == GameType.CREATIVE;
@@ -40,11 +41,11 @@ public class TagItemInInventoryTickProcedure {
 				}
 				return false;
 			}
-		}.checkGamemode(entity)))) {
+		}.checkGamemode(entity))) {
 			if (entity instanceof LivingEntity) {
 				((LivingEntity) entity).attackEntityFrom(new DamageSource("electrocuted").setDamageBypassesArmor(), (float) 2);
 			}
-			((itemstack)).shrink((int) 1);
+			(itemstack).shrink((int) 1);
 		}
 	}
 }

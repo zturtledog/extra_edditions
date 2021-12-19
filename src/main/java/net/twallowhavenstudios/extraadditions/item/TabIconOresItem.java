@@ -14,6 +14,7 @@ import net.minecraft.block.BlockState;
 public class TabIconOresItem extends ExtraAdditionsModElements.ModElement {
 	@ObjectHolder("extra_additions:tab_icon_ores")
 	public static final Item block = null;
+
 	public TabIconOresItem(ExtraAdditionsModElements instance) {
 		super(instance, 96);
 	}
@@ -22,6 +23,7 @@ public class TabIconOresItem extends ExtraAdditionsModElements.ModElement {
 	public void initElements() {
 		elements.items.add(() -> new ItemCustom());
 	}
+
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			super(new Item.Properties().group(null).maxStackSize(64).rarity(Rarity.COMMON));

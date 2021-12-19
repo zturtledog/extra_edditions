@@ -45,6 +45,7 @@ import java.util.Collections;
 public class CopperOreBlock extends ExtraAdditionsModElements.ModElement {
 	@ObjectHolder("extra_additions:copper_ore")
 	public static final Block block = null;
+
 	public CopperOreBlock(ExtraAdditionsModElements instance) {
 		super(instance, 96);
 		MinecraftForge.EVENT_BUS.register(this);
@@ -56,6 +57,7 @@ public class CopperOreBlock extends ExtraAdditionsModElements.ModElement {
 		elements.blocks.add(() -> new CustomBlock());
 		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(OresItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
+
 	public static class CustomBlock extends Block {
 		public CustomBlock() {
 			super(Block.Properties.create(Material.ROCK).sound(SoundType.STONE).hardnessAndResistance(1f, 10f).setLightLevel(s -> 0));
@@ -75,12 +77,15 @@ public class CopperOreBlock extends ExtraAdditionsModElements.ModElement {
 			return Collections.singletonList(new ItemStack(this, 1));
 		}
 	}
+
 	private static Feature<OreFeatureConfig> feature = null;
 	private static ConfiguredFeature<?, ?> configuredFeature = null;
 	private static IRuleTestType<CustomRuleTest> CUSTOM_MATCH = null;
+
 	private static class CustomRuleTest extends RuleTest {
 		static final CustomRuleTest INSTANCE = new CustomRuleTest();
 		static final com.mojang.serialization.Codec<CustomRuleTest> codec = com.mojang.serialization.Codec.unit(() -> INSTANCE);
+
 		public boolean test(BlockState blockAt, Random random) {
 			boolean blockCriteria = false;
 			if (blockAt.getBlock() == Blocks.STONE)
@@ -116,6 +121,7 @@ public class CopperOreBlock extends ExtraAdditionsModElements.ModElement {
 			Registry.register(WorldGenRegistries.CONFIGURED_FEATURE, new ResourceLocation("extra_additions:copper_ore"), configuredFeature);
 		}
 	}
+
 	@SubscribeEvent
 	public void addFeatureToBiomes(BiomeLoadingEvent event) {
 		event.getGeneration().getFeatures(GenerationStage.Decoration.UNDERGROUND_ORES).add(() -> configuredFeature);

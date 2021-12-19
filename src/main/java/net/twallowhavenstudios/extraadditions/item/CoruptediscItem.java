@@ -15,6 +15,7 @@ import net.minecraft.item.Item;
 public class CoruptediscItem extends ExtraAdditionsModElements.ModElement {
 	@ObjectHolder("extra_additions:coruptedisc")
 	public static final Item block = null;
+
 	public CoruptediscItem(ExtraAdditionsModElements instance) {
 		super(instance, 44);
 	}
@@ -23,6 +24,7 @@ public class CoruptediscItem extends ExtraAdditionsModElements.ModElement {
 	public void initElements() {
 		elements.items.add(() -> new MusicDiscItemCustom());
 	}
+
 	public static class MusicDiscItemCustom extends MusicDiscItem {
 		public MusicDiscItemCustom() {
 			super(0, ExtraAdditionsModElements.sounds.get(new ResourceLocation("extra_additions:coruptedisc")),

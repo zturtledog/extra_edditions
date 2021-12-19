@@ -15,6 +15,7 @@ import net.minecraft.block.BlockState;
 public class ShardItem extends ExtraAdditionsModElements.ModElement {
 	@ObjectHolder("extra_additions:shard")
 	public static final Item block = null;
+
 	public ShardItem(ExtraAdditionsModElements instance) {
 		super(instance, 35);
 	}
@@ -23,6 +24,7 @@ public class ShardItem extends ExtraAdditionsModElements.ModElement {
 	public void initElements() {
 		elements.items.add(() -> new ItemCustom());
 	}
+
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			super(new Item.Properties().group(ItemGroup.MISC).maxStackSize(64).rarity(Rarity.COMMON));

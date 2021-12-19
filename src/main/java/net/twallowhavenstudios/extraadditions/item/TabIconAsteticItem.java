@@ -14,6 +14,7 @@ import net.minecraft.block.BlockState;
 public class TabIconAsteticItem extends ExtraAdditionsModElements.ModElement {
 	@ObjectHolder("extra_additions:tab_icon_astetic")
 	public static final Item block = null;
+
 	public TabIconAsteticItem(ExtraAdditionsModElements instance) {
 		super(instance, 30);
 	}
@@ -22,6 +23,7 @@ public class TabIconAsteticItem extends ExtraAdditionsModElements.ModElement {
 	public void initElements() {
 		elements.items.add(() -> new ItemCustom());
 	}
+
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			super(new Item.Properties().group(null).maxStackSize(64).rarity(Rarity.COMMON));

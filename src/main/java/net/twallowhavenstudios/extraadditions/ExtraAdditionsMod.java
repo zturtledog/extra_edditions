@@ -46,6 +46,7 @@ public class ExtraAdditionsMod {
 	public static final SimpleChannel PACKET_HANDLER = NetworkRegistry.newSimpleChannel(new ResourceLocation("extra_additions", "extra_additions"),
 			() -> PROTOCOL_VERSION, PROTOCOL_VERSION::equals, PROTOCOL_VERSION::equals);
 	public ExtraAdditionsModElements elements;
+
 	public ExtraAdditionsMod() {
 		elements = new ExtraAdditionsModElements();
 		FMLJavaModLoadingContext.get().getModEventBus().register(this);
@@ -86,8 +87,10 @@ public class ExtraAdditionsMod {
 	public void registerSounds(RegistryEvent.Register<net.minecraft.util.SoundEvent> event) {
 		elements.registerSounds(event);
 	}
+
 	private static class ExtraAdditionsModFMLBusEvents {
 		private final ExtraAdditionsMod parent;
+
 		ExtraAdditionsModFMLBusEvents(ExtraAdditionsMod parent) {
 			this.parent = parent;
 		}

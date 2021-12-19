@@ -45,8 +45,7 @@ import net.minecraft.block.BlockState;
 import javax.annotation.Nullable;
 import javax.annotation.Nonnull;
 
-import java.util.Map;
-import java.util.HashMap;
+import java.util.Collections;
 
 import io.netty.buffer.Unpooled;
 
@@ -54,6 +53,7 @@ import io.netty.buffer.Unpooled;
 public class ShardLauncherItem extends ExtraAdditionsModElements.ModElement {
 	@ObjectHolder("extra_additions:shard_launcher")
 	public static final Item block = null;
+
 	public ShardLauncherItem(ExtraAdditionsModElements instance) {
 		super(instance, 35);
 		MinecraftForge.EVENT_BUS.register(this);
@@ -73,6 +73,7 @@ public class ShardLauncherItem extends ExtraAdditionsModElements.ModElement {
 	public void initElements() {
 		elements.items.add(() -> new ItemCustom());
 	}
+
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			super(new Item.Properties().group(ItemGroup.TOOLS).maxStackSize(1).rarity(Rarity.RARE));
@@ -128,10 +129,8 @@ public class ShardLauncherItem extends ExtraAdditionsModElements.ModElement {
 			double x = entity.getPosX();
 			double y = entity.getPosY();
 			double z = entity.getPosZ();
-			{
-				Map<String, Object> $_dependencies = new HashMap<>();
-				ShardLauncherOnPlayerStoppedUsingProcedure.executeProcedure($_dependencies);
-			}
+
+			ShardLauncherOnPlayerStoppedUsingProcedure.executeProcedure(Collections.EMPTY_MAP);
 		}
 
 		@Override
@@ -159,6 +158,7 @@ public class ShardLauncherItem extends ExtraAdditionsModElements.ModElement {
 
 	private static class InventoryCapability implements ICapabilitySerializable<CompoundNBT> {
 		private final LazyOptional<ItemStackHandler> inventory = LazyOptional.of(this::createItemHandler);
+
 		@Override
 		public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> capability, @Nullable Direction side) {
 			return capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY ? this.inventory.cast() : LazyOptional.empty();

@@ -15,6 +15,7 @@ import net.minecraft.block.BlockState;
 public class PlasticItem extends ExtraAdditionsModElements.ModElement {
 	@ObjectHolder("extra_additions:plastic")
 	public static final Item block = null;
+
 	public PlasticItem(ExtraAdditionsModElements instance) {
 		super(instance, 22);
 	}
@@ -23,6 +24,7 @@ public class PlasticItem extends ExtraAdditionsModElements.ModElement {
 	public void initElements() {
 		elements.items.add(() -> new ItemCustom());
 	}
+
 	public static class ItemCustom extends Item {
 		public ItemCustom() {
 			super(new Item.Properties().group(ItemsItemGroup.tab).maxStackSize(64).rarity(Rarity.COMMON));

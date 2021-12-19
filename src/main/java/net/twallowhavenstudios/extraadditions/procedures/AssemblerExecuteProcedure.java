@@ -27,7 +27,13 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.Map;
 
 public class AssemblerExecuteProcedure {
+
 	public static void executeProcedure(Map<String, Object> dependencies) {
+		if (dependencies.get("world") == null) {
+			if (!dependencies.containsKey("world"))
+				ExtraAdditionsMod.LOGGER.warn("Failed to load dependency world for procedure AssemblerExecute!");
+			return;
+		}
 		if (dependencies.get("x") == null) {
 			if (!dependencies.containsKey("x"))
 				ExtraAdditionsMod.LOGGER.warn("Failed to load dependency x for procedure AssemblerExecute!");
@@ -43,19 +49,14 @@ public class AssemblerExecuteProcedure {
 				ExtraAdditionsMod.LOGGER.warn("Failed to load dependency z for procedure AssemblerExecute!");
 			return;
 		}
-		if (dependencies.get("world") == null) {
-			if (!dependencies.containsKey("world"))
-				ExtraAdditionsMod.LOGGER.warn("Failed to load dependency world for procedure AssemblerExecute!");
-			return;
-		}
+		IWorld world = (IWorld) dependencies.get("world");
 		double x = dependencies.get("x") instanceof Integer ? (int) dependencies.get("x") : (double) dependencies.get("x");
 		double y = dependencies.get("y") instanceof Integer ? (int) dependencies.get("y") : (double) dependencies.get("y");
 		double z = dependencies.get("z") instanceof Integer ? (int) dependencies.get("z") : (double) dependencies.get("z");
-		IWorld world = (IWorld) dependencies.get("world");
 		double rscp = 0;
 		double amnt = 0;
-		amnt = (double) 5;
-		if ((((new Object() {
+		amnt = 5;
+		if (new Object() {
 			public int getAmount(IWorld world, BlockPos pos, int sltid) {
 				AtomicInteger _retval = new AtomicInteger(0);
 				TileEntity _ent = world.getTileEntity(pos);
@@ -66,7 +67,7 @@ public class AssemblerExecuteProcedure {
 				}
 				return _retval.get();
 			}
-		}.getAmount(world, new BlockPos((int) x, (int) y, (int) z), (int) (5))) >= 3) && ((new Object() {
+		}.getAmount(world, new BlockPos((int) x, (int) y, (int) z), (int) (5)) >= 3 && (new Object() {
 			public ItemStack getItemStack(BlockPos pos, int sltid) {
 				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
 				TileEntity _ent = world.getTileEntity(pos);
@@ -77,8 +78,8 @@ public class AssemblerExecuteProcedure {
 				}
 				return _retval.get();
 			}
-		}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (5))).getItem() == TagItem.block))) {
-			if (((((new Object() {
+		}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (5))).getItem() == TagItem.block) {
+			if ((new Object() {
 				public ItemStack getItemStack(BlockPos pos, int sltid) {
 					AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
 					TileEntity _ent = world.getTileEntity(pos);
@@ -89,7 +90,7 @@ public class AssemblerExecuteProcedure {
 					}
 					return _retval.get();
 				}
-			}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (0))).getItem() == CapacitorItem.block) && ((new Object() {
+			}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (0))).getItem() == CapacitorItem.block && (new Object() {
 				public ItemStack getItemStack(BlockPos pos, int sltid) {
 					AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
 					TileEntity _ent = world.getTileEntity(pos);
@@ -100,7 +101,7 @@ public class AssemblerExecuteProcedure {
 					}
 					return _retval.get();
 				}
-			}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (1))).getItem() == TransistorItem.block)) && (((new Object() {
+			}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (1))).getItem() == TransistorItem.block && (new Object() {
 				public ItemStack getItemStack(BlockPos pos, int sltid) {
 					AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
 					TileEntity _ent = world.getTileEntity(pos);
@@ -111,7 +112,7 @@ public class AssemblerExecuteProcedure {
 					}
 					return _retval.get();
 				}
-			}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (2))).getItem() == TransistorItem.block) && ((new Object() {
+			}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (2))).getItem() == TransistorItem.block && (new Object() {
 				public ItemStack getItemStack(BlockPos pos, int sltid) {
 					AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
 					TileEntity _ent = world.getTileEntity(pos);
@@ -122,7 +123,7 @@ public class AssemblerExecuteProcedure {
 					}
 					return _retval.get();
 				}
-			}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (3))).getItem() == PlasticItem.block)))) {
+			}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (3))).getItem() == PlasticItem.block) {
 				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -132,7 +133,7 @@ public class AssemblerExecuteProcedure {
 					if (world instanceof World)
 						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
-			} else if (((((new Object() {
+			} else if ((new Object() {
 				public ItemStack getItemStack(BlockPos pos, int sltid) {
 					AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
 					TileEntity _ent = world.getTileEntity(pos);
@@ -143,7 +144,7 @@ public class AssemblerExecuteProcedure {
 					}
 					return _retval.get();
 				}
-			}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (0))).getItem() == SiliconeWaferItem.block) && ((new Object() {
+			}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (0))).getItem() == SiliconeWaferItem.block && (new Object() {
 				public ItemStack getItemStack(BlockPos pos, int sltid) {
 					AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
 					TileEntity _ent = world.getTileEntity(pos);
@@ -154,7 +155,7 @@ public class AssemblerExecuteProcedure {
 					}
 					return _retval.get();
 				}
-			}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (1))).getItem() == GoldWaferItem.block)) && (((new Object() {
+			}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (1))).getItem() == GoldWaferItem.block && (new Object() {
 				public ItemStack getItemStack(BlockPos pos, int sltid) {
 					AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
 					TileEntity _ent = world.getTileEntity(pos);
@@ -165,7 +166,7 @@ public class AssemblerExecuteProcedure {
 					}
 					return _retval.get();
 				}
-			}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (2))).getItem() == PlasticItem.block) && ((new Object() {
+			}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (2))).getItem() == PlasticItem.block && (new Object() {
 				public ItemStack getItemStack(BlockPos pos, int sltid) {
 					AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
 					TileEntity _ent = world.getTileEntity(pos);
@@ -176,7 +177,7 @@ public class AssemblerExecuteProcedure {
 					}
 					return _retval.get();
 				}
-			}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (3))).getItem() == CopperIngotItem.block)))) {
+			}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (3))).getItem() == CopperIngotItem.block) {
 				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -186,7 +187,7 @@ public class AssemblerExecuteProcedure {
 					if (world instanceof World)
 						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
-			} else if (((((new Object() {
+			} else if ((new Object() {
 				public ItemStack getItemStack(BlockPos pos, int sltid) {
 					AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
 					TileEntity _ent = world.getTileEntity(pos);
@@ -197,7 +198,7 @@ public class AssemblerExecuteProcedure {
 					}
 					return _retval.get();
 				}
-			}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (0))).getItem() == CopperIngotItem.block) && ((new Object() {
+			}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (0))).getItem() == CopperIngotItem.block && (new Object() {
 				public ItemStack getItemStack(BlockPos pos, int sltid) {
 					AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
 					TileEntity _ent = world.getTileEntity(pos);
@@ -208,7 +209,7 @@ public class AssemblerExecuteProcedure {
 					}
 					return _retval.get();
 				}
-			}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (1))).getItem() == Blocks.GLASS_PANE.asItem())) && (((new Object() {
+			}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (1))).getItem() == Blocks.GLASS_PANE.asItem() && (new Object() {
 				public ItemStack getItemStack(BlockPos pos, int sltid) {
 					AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
 					TileEntity _ent = world.getTileEntity(pos);
@@ -219,7 +220,7 @@ public class AssemblerExecuteProcedure {
 					}
 					return _retval.get();
 				}
-			}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (2))).getItem() == PlasticItem.block) && ((new Object() {
+			}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (2))).getItem() == PlasticItem.block && (new Object() {
 				public ItemStack getItemStack(BlockPos pos, int sltid) {
 					AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
 					TileEntity _ent = world.getTileEntity(pos);
@@ -230,7 +231,7 @@ public class AssemblerExecuteProcedure {
 					}
 					return _retval.get();
 				}
-			}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (3))).getItem() == IronWaferItem.block)))) {
+			}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (3))).getItem() == IronWaferItem.block) {
 				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -252,14 +253,14 @@ public class AssemblerExecuteProcedure {
 				}
 			}
 		}
-		if ((((new Object() {
+		if (new Object() {
 			public double getValue(IWorld world, BlockPos pos, String tag) {
 				TileEntity tileEntity = world.getTileEntity(pos);
 				if (tileEntity != null)
 					return tileEntity.getTileData().getDouble(tag);
 				return -1;
 			}
-		}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "rscp")) > 0) && ((new Object() {
+		}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "rscp") > 0 && new Object() {
 			public int getAmount(IWorld world, BlockPos pos, int sltid) {
 				AtomicInteger _retval = new AtomicInteger(0);
 				TileEntity _ent = world.getTileEntity(pos);
@@ -270,15 +271,15 @@ public class AssemblerExecuteProcedure {
 				}
 				return _retval.get();
 			}
-		}.getAmount(world, new BlockPos((int) x, (int) y, (int) z), (int) (4))) == 0))) {
-			if (((new Object() {
+		}.getAmount(world, new BlockPos((int) x, (int) y, (int) z), (int) (4)) == 0) {
+			if (new Object() {
 				public double getValue(IWorld world, BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
 					if (tileEntity != null)
 						return tileEntity.getTileData().getDouble(tag);
 					return -1;
 				}
-			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "num")) == (0 * amnt))) {
+			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "num") == 0 * amnt) {
 				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -288,14 +289,14 @@ public class AssemblerExecuteProcedure {
 					if (world instanceof World)
 						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
-			} else if (((new Object() {
+			} else if (new Object() {
 				public double getValue(IWorld world, BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
 					if (tileEntity != null)
 						return tileEntity.getTileData().getDouble(tag);
 					return -1;
 				}
-			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "num")) == (1 * amnt))) {
+			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "num") == 1 * amnt) {
 				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -305,14 +306,14 @@ public class AssemblerExecuteProcedure {
 					if (world instanceof World)
 						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
-			} else if (((new Object() {
+			} else if (new Object() {
 				public double getValue(IWorld world, BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
 					if (tileEntity != null)
 						return tileEntity.getTileData().getDouble(tag);
 					return -1;
 				}
-			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "num")) == (2 * amnt))) {
+			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "num") == 2 * amnt) {
 				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -322,14 +323,14 @@ public class AssemblerExecuteProcedure {
 					if (world instanceof World)
 						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
-			} else if (((new Object() {
+			} else if (new Object() {
 				public double getValue(IWorld world, BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
 					if (tileEntity != null)
 						return tileEntity.getTileData().getDouble(tag);
 					return -1;
 				}
-			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "num")) == (3 * amnt))) {
+			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "num") == 3 * amnt) {
 				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -339,14 +340,14 @@ public class AssemblerExecuteProcedure {
 					if (world instanceof World)
 						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
-			} else if (((new Object() {
+			} else if (new Object() {
 				public double getValue(IWorld world, BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
 					if (tileEntity != null)
 						return tileEntity.getTileData().getDouble(tag);
 					return -1;
 				}
-			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "num")) == (4 * amnt))) {
+			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "num") == 4 * amnt) {
 				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -356,14 +357,14 @@ public class AssemblerExecuteProcedure {
 					if (world instanceof World)
 						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
-			} else if (((new Object() {
+			} else if (new Object() {
 				public double getValue(IWorld world, BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
 					if (tileEntity != null)
 						return tileEntity.getTileData().getDouble(tag);
 					return -1;
 				}
-			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "num")) == (5 * amnt))) {
+			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "num") == 5 * amnt) {
 				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -373,14 +374,14 @@ public class AssemblerExecuteProcedure {
 					if (world instanceof World)
 						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
-			} else if (((new Object() {
+			} else if (new Object() {
 				public double getValue(IWorld world, BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
 					if (tileEntity != null)
 						return tileEntity.getTileData().getDouble(tag);
 					return -1;
 				}
-			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "num")) == (6 * amnt))) {
+			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "num") == 6 * amnt) {
 				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -390,14 +391,14 @@ public class AssemblerExecuteProcedure {
 					if (world instanceof World)
 						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
-			} else if (((new Object() {
+			} else if (new Object() {
 				public double getValue(IWorld world, BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
 					if (tileEntity != null)
 						return tileEntity.getTileData().getDouble(tag);
 					return -1;
 				}
-			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "num")) == (7 * amnt))) {
+			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "num") == 7 * amnt) {
 				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -407,14 +408,14 @@ public class AssemblerExecuteProcedure {
 					if (world instanceof World)
 						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
-			} else if (((new Object() {
+			} else if (new Object() {
 				public double getValue(IWorld world, BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
 					if (tileEntity != null)
 						return tileEntity.getTileData().getDouble(tag);
 					return -1;
 				}
-			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "num")) == (8 * amnt))) {
+			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "num") == 8 * amnt) {
 				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -424,14 +425,14 @@ public class AssemblerExecuteProcedure {
 					if (world instanceof World)
 						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
-			} else if (((new Object() {
+			} else if (new Object() {
 				public double getValue(IWorld world, BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
 					if (tileEntity != null)
 						return tileEntity.getTileData().getDouble(tag);
 					return -1;
 				}
-			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "num")) == (9 * amnt))) {
+			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "num") == 9 * amnt) {
 				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -441,14 +442,14 @@ public class AssemblerExecuteProcedure {
 					if (world instanceof World)
 						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
-			} else if (((new Object() {
+			} else if (new Object() {
 				public double getValue(IWorld world, BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
 					if (tileEntity != null)
 						return tileEntity.getTileData().getDouble(tag);
 					return -1;
 				}
-			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "num")) == (10 * amnt))) {
+			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "num") == 10 * amnt) {
 				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -458,14 +459,14 @@ public class AssemblerExecuteProcedure {
 					if (world instanceof World)
 						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
-			} else if (((new Object() {
+			} else if (new Object() {
 				public double getValue(IWorld world, BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
 					if (tileEntity != null)
 						return tileEntity.getTileData().getDouble(tag);
 					return -1;
 				}
-			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "num")) == (11 * amnt))) {
+			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "num") == 11 * amnt) {
 				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -475,14 +476,14 @@ public class AssemblerExecuteProcedure {
 					if (world instanceof World)
 						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 				}
-			} else if (((new Object() {
+			} else if (new Object() {
 				public double getValue(IWorld world, BlockPos pos, String tag) {
 					TileEntity tileEntity = world.getTileEntity(pos);
 					if (tileEntity != null)
 						return tileEntity.getTileData().getDouble(tag);
 					return -1;
 				}
-			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "num")) == (12 * amnt))) {
+			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "num") == 12 * amnt) {
 				if (!world.isRemote()) {
 					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
 					TileEntity _tileEntity = world.getTileEntity(_bp);
@@ -506,14 +507,14 @@ public class AssemblerExecuteProcedure {
 						});
 					}
 				}
-				if (((new Object() {
+				if (new Object() {
 					public double getValue(IWorld world, BlockPos pos, String tag) {
 						TileEntity tileEntity = world.getTileEntity(pos);
 						if (tileEntity != null)
 							return tileEntity.getTileData().getDouble(tag);
 						return -1;
 					}
-				}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "rscp")) == 1)) {
+				}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "rscp") == 1) {
 					{
 						TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
 						if (_ent != null) {
@@ -584,14 +585,14 @@ public class AssemblerExecuteProcedure {
 						}
 					}
 				}
-				if (((new Object() {
+				if (new Object() {
 					public double getValue(IWorld world, BlockPos pos, String tag) {
 						TileEntity tileEntity = world.getTileEntity(pos);
 						if (tileEntity != null)
 							return tileEntity.getTileData().getDouble(tag);
 						return -1;
 					}
-				}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "rscp")) == 2)) {
+				}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "rscp") == 2) {
 					{
 						TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
 						if (_ent != null) {
@@ -662,14 +663,14 @@ public class AssemblerExecuteProcedure {
 						}
 					}
 				}
-				if (((new Object() {
+				if (new Object() {
 					public double getValue(IWorld world, BlockPos pos, String tag) {
 						TileEntity tileEntity = world.getTileEntity(pos);
 						if (tileEntity != null)
 							return tileEntity.getTileData().getDouble(tag);
 						return -1;
 					}
-				}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "rscp")) == 3)) {
+				}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "rscp") == 3) {
 					{
 						TileEntity _ent = world.getTileEntity(new BlockPos((int) x, (int) y, (int) z));
 						if (_ent != null) {
@@ -755,14 +756,14 @@ public class AssemblerExecuteProcedure {
 				TileEntity _tileEntity = world.getTileEntity(_bp);
 				BlockState _bs = world.getBlockState(_bp);
 				if (_tileEntity != null)
-					_tileEntity.getTileData().putDouble("num", ((new Object() {
+					_tileEntity.getTileData().putDouble("num", (new Object() {
 						public double getValue(IWorld world, BlockPos pos, String tag) {
 							TileEntity tileEntity = world.getTileEntity(pos);
 							if (tileEntity != null)
 								return tileEntity.getTileData().getDouble(tag);
 							return -1;
 						}
-					}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "num")) + 1));
+					}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "num") + 1));
 				if (world instanceof World)
 					((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
 			}
