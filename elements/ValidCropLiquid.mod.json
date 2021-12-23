@@ -1,0 +1,20 @@
+{
+  "_fv": 24,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "Blocks.WATER"
+      },
+      {
+        "value": "Blocks.FLOWING_WATER"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "name": "valid_crop_liquid",
+    "namespace": "forge"
+  }
+}

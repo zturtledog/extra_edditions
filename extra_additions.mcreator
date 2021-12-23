@@ -1889,6 +1889,66 @@
         ]
       },
       "path": "~/brewery"
+    },
+    {
+      "name": "ExtraEdditionsenergytag",
+      "type": "tag",
+      "sortid": 116,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "extra_edditionsenergytag",
+      "path": "~/tags"
+    },
+    {
+      "name": "Sprinkler",
+      "type": "block",
+      "sortid": 117,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "sprinkler",
+      "path": "~/farming"
+    },
+    {
+      "name": "ValidCropLiquid",
+      "type": "tag",
+      "sortid": 117,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "valid_crop_liquid",
+      "path": "~/tags"
+    },
+    {
+      "name": "StopCropGrow",
+      "type": "procedure",
+      "sortid": 117,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "stop_crop_grow",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/farming"
     }
   ],
   "variable_elements": [],
@@ -1990,6 +2050,7 @@
       "item.extra_additions.drillbit": "Drillbit",
       "item.extra_additions.fezz_armor_boots": "Fezz Boots",
       "block.extra_additions.copper_ore": "Copper Ore",
+      "block.extra_additions.sprinkler": "Sprinkler",
       "item.extra_additions.modifierfilesystem": "File System Modifier",
       "item.extra_additions.plastic": "Plastic"
     }

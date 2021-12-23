@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "extra_additions:blocks/farm_side",
+    "up": "extra_additions:blocks/farm_side",
+    "north": "extra_additions:blocks/sprinkler_side",
+    "east": "extra_additions:blocks/sprinkler_side",
+    "south": "extra_additions:blocks/sprinkler_side",
+    "west": "extra_additions:blocks/sprinkler_side",
+    "particle": "extra_additions:blocks/farm_side"
+  }
+}

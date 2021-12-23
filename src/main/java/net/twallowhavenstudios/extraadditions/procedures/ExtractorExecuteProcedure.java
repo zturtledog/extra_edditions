@@ -1,6 +1,5 @@
 package net.twallowhavenstudios.extraadditions.procedures;
 
-import net.twallowhavenstudios.extraadditions.item.TagItem;
 import net.twallowhavenstudios.extraadditions.item.SiliconeItem;
 import net.twallowhavenstudios.extraadditions.item.PlasticItem;
 import net.twallowhavenstudios.extraadditions.item.BiopolymerItem;
@@ -12,7 +11,9 @@ import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraft.world.World;
 import net.minecraft.world.IWorld;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.item.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.block.Blocks;
@@ -63,18 +64,19 @@ public class ExtractorExecuteProcedure {
 				}
 				return _retval.get();
 			}
-		}.getAmount(world, new BlockPos((int) x, (int) y, (int) z), (int) (3)) >= 2 && (new Object() {
-			public ItemStack getItemStack(BlockPos pos, int sltid) {
-				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				TileEntity _ent = world.getTileEntity(pos);
-				if (_ent != null) {
-					_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
-						_retval.set(capability.getStackInSlot(sltid).copy());
-					});
-				}
-				return _retval.get();
-			}
-		}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (3))).getItem() == TagItem.block) {
+		}.getAmount(world, new BlockPos((int) x, (int) y, (int) z), (int) (3)) >= 2
+				&& ItemTags.getCollection().getTagByID(new ResourceLocation("extra_edditions\\energy_tag")).contains((new Object() {
+					public ItemStack getItemStack(BlockPos pos, int sltid) {
+						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+						TileEntity _ent = world.getTileEntity(pos);
+						if (_ent != null) {
+							_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+								_retval.set(capability.getStackInSlot(sltid).copy());
+							});
+						}
+						return _retval.get();
+					}
+				}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (3))).getItem())) {
 			if ((new Object() {
 				public ItemStack getItemStack(BlockPos pos, int sltid) {
 					AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);

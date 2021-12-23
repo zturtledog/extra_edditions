@@ -1,7 +1,6 @@
 package net.twallowhavenstudios.extraadditions.procedures;
 
 import net.twallowhavenstudios.extraadditions.item.TransistorItem;
-import net.twallowhavenstudios.extraadditions.item.TagItem;
 import net.twallowhavenstudios.extraadditions.item.SiliconeWaferItem;
 import net.twallowhavenstudios.extraadditions.item.PlasticItem;
 import net.twallowhavenstudios.extraadditions.item.IronWaferItem;
@@ -17,7 +16,9 @@ import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraft.world.World;
 import net.minecraft.world.IWorld;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.item.ItemStack;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.BlockState;
@@ -67,18 +68,19 @@ public class AssemblerExecuteProcedure {
 				}
 				return _retval.get();
 			}
-		}.getAmount(world, new BlockPos((int) x, (int) y, (int) z), (int) (5)) >= 3 && (new Object() {
-			public ItemStack getItemStack(BlockPos pos, int sltid) {
-				AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
-				TileEntity _ent = world.getTileEntity(pos);
-				if (_ent != null) {
-					_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
-						_retval.set(capability.getStackInSlot(sltid).copy());
-					});
-				}
-				return _retval.get();
-			}
-		}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (5))).getItem() == TagItem.block) {
+		}.getAmount(world, new BlockPos((int) x, (int) y, (int) z), (int) (5)) >= 3
+				&& ItemTags.getCollection().getTagByID(new ResourceLocation("extraedditions:energy_tag")).contains((new Object() {
+					public ItemStack getItemStack(BlockPos pos, int sltid) {
+						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+						TileEntity _ent = world.getTileEntity(pos);
+						if (_ent != null) {
+							_ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+								_retval.set(capability.getStackInSlot(sltid).copy());
+							});
+						}
+						return _retval.get();
+					}
+				}.getItemStack(new BlockPos((int) x, (int) y, (int) z), (int) (5))).getItem())) {
 			if ((new Object() {
 				public ItemStack getItemStack(BlockPos pos, int sltid) {
 					AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
