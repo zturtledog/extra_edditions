@@ -1,7 +1,7 @@
 
 package net.twallowhavenstudios.extraadditions.block;
 
-import net.twallowhavenstudios.extraadditions.procedures.ThisisthertherdtimethatinhsqwarehadtoreastartstheinffdfileebecauseeofsutipifgddfvcompurtersfireszztsbecaussetofnotwolerrdffcnowbecauseofstupidparentalshitProcedure;
+import net.twallowhavenstudios.extraadditions.procedures.JohnathanProcedure;
 import net.twallowhavenstudios.extraadditions.procedures.ComputerRedstoneOnProcedure;
 import net.twallowhavenstudios.extraadditions.procedures.ComputerRedstoneOffProcedure;
 import net.twallowhavenstudios.extraadditions.itemgroup.ProssesingItemGroup;
@@ -176,11 +176,10 @@ public class ComputerBlock extends ExtraAdditionsModElements.ModElement {
 			int y = pos.getY();
 			int z = pos.getZ();
 
-			ThisisthertherdtimethatinhsqwarehadtoreastartstheinffdfileebecauseeofsutipifgddfvcompurtersfireszztsbecaussetofnotwolerrdffcnowbecauseofstupidparentalshitProcedure
-					.executeProcedure(Stream
-							.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x),
-									new AbstractMap.SimpleEntry<>("y", y), new AbstractMap.SimpleEntry<>("z", z))
-							.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
+			JohnathanProcedure.executeProcedure(Stream
+					.of(new AbstractMap.SimpleEntry<>("world", world), new AbstractMap.SimpleEntry<>("x", x), new AbstractMap.SimpleEntry<>("y", y),
+							new AbstractMap.SimpleEntry<>("z", z))
+					.collect(HashMap::new, (_m, _e) -> _m.put(_e.getKey(), _e.getValue()), Map::putAll));
 			world.getPendingBlockTicks().scheduleTick(pos, this, 10);
 		}
 

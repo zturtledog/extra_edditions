@@ -5,12 +5,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import engine.helpers.secdar;
-
 public class DatascrpItnr {
     public ArrayList<secdar> sectionData = new ArrayList<secdar>();
 
-    public infoscrp load(Swtring file) throws IOException {
+    public DatascrpItnr load(String file) throws IOException {
         try {
             File myObj = new File(file);
             Scanner r = new Scanner(myObj);

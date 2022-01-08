@@ -1639,36 +1639,6 @@
       "path": "~/computing"
     },
     {
-      "name": "Thisisthertherdtimethatinhsqwarehadtoreastartstheinffdfileebecauseeofsutipifgddfvcompurtersfireszztsbecaussetofnotwolerrdffcnowbecauseofstupidparentalshit",
-      "type": "procedure",
-      "sortid": 106,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "registry_name": "comuper",
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/computing"
-    },
-    {
       "name": "ComputerRSCP",
       "type": "recipe",
       "sortid": 107,
@@ -2044,10 +2014,40 @@
       "name": "DatascrpItnr",
       "type": "code",
       "sortid": 130,
-      "compiles": false,
+      "compiles": true,
       "locked_code": true,
       "ids": {},
       "registry_name": "datascrp_itnr"
+    },
+    {
+      "name": "Johnathan",
+      "type": "procedure",
+      "sortid": 131,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "johnathan",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/computing"
     }
   ],
   "variable_elements": [],
@@ -2083,8 +2083,8 @@
       "block.extra_additions.glowing_blucrete": "Glowing Blucrete",
       "item.extra_additions.silicone": "Silicone",
       "block.extra_additions.up_conveyor_0": "Up Conveyor Lvl 1",
-      "item.extra_additions.transistor": "Transistor",
       "item.extra_additions.tag": "Tag",
+      "item.extra_additions.transistor": "Transistor",
       "item.extra_additions.silicone_wafer": "Silicone Wafer",
       "item.extra_additions.seventh_moon.desc": "--",
       "item.extra_additions.modifiermanipulate": "Manipulation Modifier",
