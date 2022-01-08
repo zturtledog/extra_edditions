@@ -2044,7 +2044,7 @@
       "name": "DatascrpItnr",
       "type": "code",
       "sortid": 130,
-      "compiles": true,
+      "compiles": false,
       "locked_code": true,
       "ids": {},
       "registry_name": "datascrp_itnr"

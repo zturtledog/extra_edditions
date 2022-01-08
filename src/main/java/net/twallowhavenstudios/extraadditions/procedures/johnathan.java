@@ -22,7 +22,7 @@ import java.io.FileNotFoundException;
 import java.io.File;
 import java.io.BufferedReader;
 
-public class ThisisthertherdtimethatinhsqwarehadtoreastartstheinffdfileebecauseeofsutipifgddfvcompurtersfireszztsbecaussetofnotwolerrdffcnowbecauseofstupidparentalshitProcedure {
+public class johnathan {
 
 	public static void executeProcedure(Map<String, Object> dependencies) {
 		if (dependencies.get("world") == null) {
