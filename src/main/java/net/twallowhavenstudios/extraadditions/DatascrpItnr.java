@@ -7,10 +7,10 @@ import java.util.Scanner;
 
 import engine.helpers.secdar;
 
-public class infoscrp {
+public class DatascrpItnr {
     public ArrayList<secdar> sectionData = new ArrayList<secdar>();
 
-    public infoscrp load(String file) throws IOException {
+    public infoscrp load(Swtring file) throws IOException {
         try {
             File myObj = new File(file);
             Scanner r = new Scanner(myObj);
@@ -69,7 +69,7 @@ public class infoscrp {
     }
 
     private String addFormat(String s) {
-        return(join(join(join(join(s.split("/~"), "?").split("~")," ").split("?"),"~").split("~ ~"),""));
+        return(join(join(join(join(s.split("/~"), "Ξ").split("~")," ").split("Ξ"),"~").split("~ ~"),""));
     }
 
     private String join(String[] split, String d) {
@@ -97,6 +97,16 @@ public class infoscrp {
         idra(String n,String v) {
             name = n;
             value = v;
+        }
+    }
+
+    public class secdar {
+        public String secname;
+        public ArrayList<String> infos;
+    
+        public secdar(String name, ArrayList<String> data) {
+            secname = name;
+            infos = (ArrayList<String>) data.clone();
         }
     }
 }
