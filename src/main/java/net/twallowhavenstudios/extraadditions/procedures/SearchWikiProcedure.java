@@ -2,7 +2,7 @@ package net.twallowhavenstudios.extraadditions.procedures;
 
 import net.twallowhavenstudios.extraadditions.gui.HomeGui;
 import net.twallowhavenstudios.extraadditions.ExtraAdditionsMod;
-
+import net.twallowhavenstudios.extraadditions.FindWikientr;
 import net.minecraftforge.fml.network.NetworkHooks;
 
 import net.minecraft.world.IWorld;
@@ -89,47 +89,10 @@ public class SearchWikiProcedure {
 				}, _bpos);
 			}
 		}
-		entity.getPersistentData().putString("descriptionln1", "");
-		entity.getPersistentData().putString("descriptionln2", "");
-		entity.getPersistentData().putString("descriptionln3", "");
-		entity.getPersistentData().putString("descriptionln4", " ");
-		entity.getPersistentData().putString("descriptionln5", " ");
-		entity.getPersistentData().putString("descriptionln6", " ");
-		entity.getPersistentData().putString("descriptionln7", " ");
-		entity.getPersistentData().putString("descriptionln8", " ");
-		entity.getPersistentData().putString("descriptionln9", " ");
-		if ((inp).equals("Assembler")) {
-			entity.getPersistentData().putString("name", "Assembler");
-			entity.getPersistentData().putString("catagory", "machines");
-			entity.getPersistentData().putString("descriptionln1", "Your first venture into the");
-			entity.getPersistentData().putString("descriptionln2", "computer industry, it is required");
-			entity.getPersistentData().putString("descriptionln3", "for anything more advanced");
-			entity.getPersistentData().putString("descriptionln4", "than a disk of iron, it takes 3");
-			entity.getPersistentData().putString("descriptionln5", "TPT per cycle.");
-		} else if ((inp).equals("Wafer Cutter")) {
-			entity.getPersistentData().putString("name", "Wafer Cutter");
-			entity.getPersistentData().putString("catagory", "machines");
-			entity.getPersistentData().putString("descriptionln1", "this is the cutter of");
-			entity.getPersistentData().putString("descriptionln2", "frisbees and fingers,");
-			entity.getPersistentData().putString("descriptionln3", "it will let you bake the basics");
-			entity.getPersistentData().putString("descriptionln4", "of transistors and other small");
-			entity.getPersistentData().putString("descriptionln5", "parts");
-		} else if ((inp).equals("Extractor")) {
-			entity.getPersistentData().putString("name", "Extractor");
-			entity.getPersistentData().putString("catagory", "machines");
-			entity.getPersistentData().putString("descriptionln1", "this powerfull machine");
-			entity.getPersistentData().putString("descriptionln2", "alows you to extract");
-			entity.getPersistentData().putString("descriptionln3", "materials from");
-			entity.getPersistentData().putString("descriptionln4", "simpler things such as");
-			entity.getPersistentData().putString("descriptionln5", "biopolymer and silicon");
-			entity.getPersistentData().putString("descriptionln6", "it is your first step into the ");
-			entity.getPersistentData().putString("descriptionln7", "world of prossesing");
-		} else {
-			entity.getPersistentData().putString("name", "error");
-			entity.getPersistentData().putString("catagory", "error");
-			entity.getPersistentData().putString("descriptionln1", ("the entry: " + inp + " has not been found"));
-			entity.getPersistentData().putString("descriptionln2", "the spelling and capitilazation must be");
-			entity.getPersistentData().putString("descriptionln2", "prsise or you might get this screen");
-		}
+		
+		
+		//new
+		FindWikientr.find(entity,inp);
+		//end new
 	}
 }

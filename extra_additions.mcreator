@@ -614,7 +614,7 @@
       "type": "procedure",
       "sortid": 38,
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "ids": {},
       "registry_name": "search_wiki",
       "metadata": {
@@ -2048,6 +2048,15 @@
         ]
       },
       "path": "~/computing"
+    },
+    {
+      "name": "FindWikientr",
+      "type": "code",
+      "sortid": 132,
+      "compiles": true,
+      "locked_code": true,
+      "ids": {},
+      "registry_name": "find_wikientr"
     }
   ],
   "variable_elements": [],

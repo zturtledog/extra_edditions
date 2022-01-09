@@ -51,7 +51,7 @@ public class DatascrpItnr {
             }
         }
 
-        return("dataline not found!");
+        return("");//("dataline not found!");
     }
 
     public ArrayList<idra> getStr(String head) {
