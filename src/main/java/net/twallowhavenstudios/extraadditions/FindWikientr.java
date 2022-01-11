@@ -1,15 +1,8 @@
 package net.twallowhavenstudios.extraadditions;
 
-import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.world.BiomeLoadingEvent;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import engine.DatascrpItnr;
-import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.fml.loading.FMLPaths;
 import net.minecraft.entity.Entity;
+import engine.DatascrpItnr;
 
 public class FindWikientr {
 	public FindWikientr() {
@@ -20,7 +13,7 @@ public class FindWikientr {
 		DatascrpItnr wiki = new DatascrpItnr();
 
 		try {
-			wiki = wiki.load("D:/moda/extra_edditions/src/main/resources/assets/wiki.dtsp");
+			wiki = wiki.load(FMLPaths.GAMEDIR.get().toString()+"\\config\\Extra-Edditions\\wiki.dtsp");
 		} catch (Exception e) {
 			System.out.println("wiki not loafed");
 			System.out.println(e);
