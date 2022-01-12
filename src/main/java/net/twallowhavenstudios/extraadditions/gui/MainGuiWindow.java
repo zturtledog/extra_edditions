@@ -83,7 +83,6 @@ public class MainGuiWindow extends ContainerScreen<MainGui.GuiContainerMod> {
 	@Override
 	protected void drawGuiContainerForegroundLayer(MatrixStack ms, int mouseX, int mouseY) {
 		this.font.drawString(ms, "in-game wiki", 68, 6, -12829636);
-		this.font.drawString(ms, "please not that the wiki only suports machines at the moment, because of lazyness", -127, 80, -6710887);
 	}
 
 	@Override

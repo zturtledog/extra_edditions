@@ -7,6 +7,8 @@ import java.util.Scanner;
 
 public class DatascrpItnr {
     public ArrayList<secdar> sectionData = new ArrayList<secdar>();
+    public ArrayList<varible> vars = new ArrayList<varible>();
+    public String f_dat = "";
 
     public DatascrpItnr load(String file) throws IOException {
         try {
@@ -18,6 +20,9 @@ public class DatascrpItnr {
 
             while (r.hasNextLine()) {
                 String current = r.nextLine().replaceAll(" ", "");
+
+                f_dat += current + "\n";
+
                 if (current.contains(":")) {
                     if (current.startsWith(":")) {
                         if (segment != "null") {
@@ -25,7 +30,9 @@ public class DatascrpItnr {
                             lines.clear();
                         }
                         segment = current;
-                    } else {
+                    }else if (current.startsWith(".")) {
+                        vars.add(new varible(current.replace(".","").split(":")[0],addFormat(current.split(":")[1])));
+                    }else {
                         lines.add(current);
                     }
                 }
@@ -56,7 +63,9 @@ public class DatascrpItnr {
                             infos.clear();
                         }
                         segment = current;
-                    } else {
+                    }else if (current.startsWith(".")) {
+                        vars.add(new varible(current.replace(".","").split(":")[0],addFormat(current.split(":")[1])));
+                    }else {
                         infos.add(current);
                     }
                 }
@@ -97,10 +106,19 @@ public class DatascrpItnr {
     }
 
     private String addFormat(String s) {
-        return (join(join(join(join(s.split("/~"), "Ξ").split("~"), " ").split("Ξ"), "~").split("~ ~"), ""));
+        return (variate(join(join(join(join(s.split("/~"), "Ξ").split("~"), " ").split("Ξ"), "~").split("~ ~"), "")));
     }
 
-    private String join(String[] split, String d) {
+    private String variate(String input) {
+        for (varible var : vars) {
+            // System.out.println("x");
+            input = input.replaceAll(var.name, var.value);
+        }
+
+        return(input);
+    }
+
+    static String join(String[] split, String d) {
         String end = "";
 
         for (int i = 0; i < split.length; i++) {
@@ -116,6 +134,16 @@ public class DatascrpItnr {
             end += in.charAt(i) * (10 ^ i);
         }
         return (end);
+    }
+
+    public Double getNum(String path) {
+        String got = get(path);
+        return(Double.parseDouble(got));
+    }
+
+    public boolean getBool(String path) {
+        String got = get(path);
+        return(got == "true" ? true:(got == "false" ? false:null));
     }
 
     public class idra {
@@ -135,6 +163,16 @@ public class DatascrpItnr {
         public secdar(String name, ArrayList<String> data) {
             secname = name;
             infos = (ArrayList<String>) data.clone();
+        }
+    }
+
+    public class varible {
+        public String name = "";
+        public String value = "";
+
+        varible(String nme, String vlu) {
+            name = nme;
+            value = vlu;
         }
     }
 }

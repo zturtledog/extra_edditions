@@ -65,7 +65,7 @@ public class ExtractorExecuteProcedure {
 				return _retval.get();
 			}
 		}.getAmount(world, new BlockPos((int) x, (int) y, (int) z), (int) (3)) >= 2
-				&& ItemTags.getCollection().getTagByID(new ResourceLocation("extra_edditions\\energy_tag")).contains((new Object() {
+				&& ItemTags.getCollection().getTagByID(new ResourceLocation("extra_edditionsenergy_tag")).contains((new Object() {
 					public ItemStack getItemStack(BlockPos pos, int sltid) {
 						AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
 						TileEntity _ent = world.getTileEntity(pos);

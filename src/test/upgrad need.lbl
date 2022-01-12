@@ -1,8 +1,10 @@
 .GET-GAME-PATH : import net.minecraftforge.fml.loading.FMLPaths;
 .ENTITY : net.minecraft.entity.Entity;
+.EVENT-MOD-LOAD :  
 
 :trefsj
     GET-GAME-PATH
+    EVENT-MOD-LOAD
 :findwikientr
     GET-GAME-PATH
     ENTITY

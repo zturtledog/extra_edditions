@@ -21,6 +21,16 @@ public class FindWikientr {
 
 		String inp = inps.replaceAll(" ", "_").toLowerCase();
 
+		addnbt(ent,"descriptionln1", "");
+		addnbt(ent,"descriptionln2", "");
+		addnbt(ent,"descriptionln3", "");
+		addnbt(ent,"descriptionln4", "");
+		addnbt(ent,"descriptionln5", "");
+		addnbt(ent,"descriptionln6", "");
+		addnbt(ent,"descriptionln7", "");
+		addnbt(ent,"descriptionln8", "");
+		addnbt(ent,"descriptionln9", "");
+
 		addnbt(ent,"name", wiki.get(":"+inp+".name"));
 		addnbt(ent,"catagory", wiki.get(":"+inp+".catagory"));
 		
