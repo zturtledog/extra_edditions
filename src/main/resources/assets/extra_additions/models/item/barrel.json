@@ -1,5 +1,5 @@
 {
-  "parent": "extra_additions:block/sprinkler",
+  "parent": "extra_additions:block/barrel",
   "display": {
     "thirdperson": {
       "rotation": [

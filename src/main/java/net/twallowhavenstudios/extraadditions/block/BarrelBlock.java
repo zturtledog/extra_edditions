@@ -1,12 +1,16 @@
 
 package net.twallowhavenstudios.extraadditions.block;
 
+import net.twallowhavenstudios.extraadditions.procedures.BarrelOnBlockRightClickedProcedure;
+import net.twallowhavenstudios.extraadditions.itemgroup.ProssesingItemGroup;
+import net.twallowhavenstudios.extraadditions.gui.BarrelPageStoreGui;
 import net.twallowhavenstudios.extraadditions.ExtraAdditionsModElements;
 
 import net.minecraftforge.registries.ObjectHolder;
 import net.minecraftforge.items.wrapper.SidedInvWrapper;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraftforge.fml.network.NetworkHooks;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.RegistryEvent;
@@ -17,27 +21,36 @@ import net.minecraft.world.World;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.NonNullList;
+import net.minecraft.util.Hand;
 import net.minecraft.util.Direction;
+import net.minecraft.util.ActionResultType;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.LockableLootTileEntity;
+import net.minecraft.state.properties.BlockStateProperties;
+import net.minecraft.state.StateContainer;
+import net.minecraft.state.EnumProperty;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
+import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.loot.LootContext;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.Item;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.BlockItem;
 import net.minecraft.inventory.container.INamedContainerProvider;
 import net.minecraft.inventory.container.Container;
-import net.minecraft.inventory.container.ChestContainer;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.inventory.ISidedInventory;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.BlockState;
@@ -49,36 +62,40 @@ import java.util.stream.IntStream;
 import java.util.List;
 import java.util.Collections;
 
+import io.netty.buffer.Unpooled;
+
 @ExtraAdditionsModElements.ModElement.Tag
-public class SprinklerBlock extends ExtraAdditionsModElements.ModElement {
-	@ObjectHolder("extra_additions:sprinkler")
+public class BarrelBlock extends ExtraAdditionsModElements.ModElement {
+	@ObjectHolder("extra_additions:barrel")
 	public static final Block block = null;
-	@ObjectHolder("extra_additions:sprinkler")
+	@ObjectHolder("extra_additions:barrel")
 	public static final TileEntityType<CustomTileEntity> tileEntityType = null;
 
-	public SprinklerBlock(ExtraAdditionsModElements instance) {
-		super(instance, 117);
+	public BarrelBlock(ExtraAdditionsModElements instance) {
+		super(instance, 149);
 		FMLJavaModLoadingContext.get().getModEventBus().register(new TileEntityRegisterHandler());
 	}
 
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new CustomBlock());
-		elements.items
-				.add(() -> new BlockItem(block, new Item.Properties().group(ItemGroup.BUILDING_BLOCKS)).setRegistryName(block.getRegistryName()));
+		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(ProssesingItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
 
 	private static class TileEntityRegisterHandler {
 		@SubscribeEvent
 		public void registerTileEntity(RegistryEvent.Register<TileEntityType<?>> event) {
-			event.getRegistry().register(TileEntityType.Builder.create(CustomTileEntity::new, block).build(null).setRegistryName("sprinkler"));
+			event.getRegistry().register(TileEntityType.Builder.create(CustomTileEntity::new, block).build(null).setRegistryName("barrel"));
 		}
 	}
 
 	public static class CustomBlock extends Block {
+		public static final EnumProperty<Direction.Axis> AXIS = BlockStateProperties.AXIS;
+
 		public CustomBlock() {
-			super(Block.Properties.create(Material.ROCK).sound(SoundType.GROUND).hardnessAndResistance(1f, 10f).setLightLevel(s -> 0));
-			setRegistryName("sprinkler");
+			super(Block.Properties.create(Material.WOOD).sound(SoundType.WOOD).hardnessAndResistance(1f, 10f).setLightLevel(s -> 0));
+			this.setDefaultState(this.stateContainer.getBaseState().with(AXIS, Direction.Axis.Y));
+			setRegistryName("barrel");
 		}
 
 		@Override
@@ -87,11 +104,64 @@ public class SprinklerBlock extends ExtraAdditionsModElements.ModElement {
 		}
 
 		@Override
+		protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
+			builder.add(AXIS);
+		}
+
+		@Override
+		public BlockState rotate(BlockState state, Rotation rot) {
+			if (rot == Rotation.CLOCKWISE_90 || rot == Rotation.COUNTERCLOCKWISE_90) {
+				if ((Direction.Axis) state.get(AXIS) == Direction.Axis.X) {
+					return state.with(AXIS, Direction.Axis.Z);
+				} else if ((Direction.Axis) state.get(AXIS) == Direction.Axis.Z) {
+					return state.with(AXIS, Direction.Axis.X);
+				}
+			}
+			return state;
+		}
+
+		@Override
+		public BlockState getStateForPlacement(BlockItemUseContext context) {
+			Direction.Axis axis = context.getFace().getAxis();;
+			return this.getDefaultState().with(AXIS, axis);
+		}
+
+		@Override
 		public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder) {
 			List<ItemStack> dropsOriginal = super.getDrops(state, builder);
 			if (!dropsOriginal.isEmpty())
 				return dropsOriginal;
 			return Collections.singletonList(new ItemStack(this, 1));
+		}
+
+		@Override
+		public ActionResultType onBlockActivated(BlockState blockstate, World world, BlockPos pos, PlayerEntity entity, Hand hand,
+				BlockRayTraceResult hit) {
+			super.onBlockActivated(blockstate, world, pos, entity, hand, hit);
+			int x = pos.getX();
+			int y = pos.getY();
+			int z = pos.getZ();
+			if (entity instanceof ServerPlayerEntity) {
+				NetworkHooks.openGui((ServerPlayerEntity) entity, new INamedContainerProvider() {
+					@Override
+					public ITextComponent getDisplayName() {
+						return new StringTextComponent("Barrel");
+					}
+
+					@Override
+					public Container createMenu(int id, PlayerInventory inventory, PlayerEntity player) {
+						return new BarrelPageStoreGui.GuiContainerMod(id, inventory,
+								new PacketBuffer(Unpooled.buffer()).writeBlockPos(new BlockPos(x, y, z)));
+					}
+				}, new BlockPos(x, y, z));
+			}
+			double hitX = hit.getHitVec().x;
+			double hitY = hit.getHitVec().y;
+			double hitZ = hit.getHitVec().z;
+			Direction direction = hit.getFace();
+
+			BarrelOnBlockRightClickedProcedure.executeProcedure(Collections.EMPTY_MAP);
+			return ActionResultType.SUCCESS;
 		}
 
 		@Override
@@ -146,7 +216,7 @@ public class SprinklerBlock extends ExtraAdditionsModElements.ModElement {
 	}
 
 	public static class CustomTileEntity extends LockableLootTileEntity implements ISidedInventory {
-		private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(9, ItemStack.EMPTY);
+		private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(85, ItemStack.EMPTY);
 
 		protected CustomTileEntity() {
 			super(tileEntityType);
@@ -200,7 +270,7 @@ public class SprinklerBlock extends ExtraAdditionsModElements.ModElement {
 
 		@Override
 		public ITextComponent getDefaultName() {
-			return new StringTextComponent("sprinkler");
+			return new StringTextComponent("barrel");
 		}
 
 		@Override
@@ -210,12 +280,12 @@ public class SprinklerBlock extends ExtraAdditionsModElements.ModElement {
 
 		@Override
 		public Container createMenu(int id, PlayerInventory player) {
-			return ChestContainer.createGeneric9X3(id, player, this);
+			return new BarrelPageStoreGui.GuiContainerMod(id, player, new PacketBuffer(Unpooled.buffer()).writeBlockPos(this.getPos()));
 		}
 
 		@Override
 		public ITextComponent getDisplayName() {
-			return new StringTextComponent("Sprinkler");
+			return new StringTextComponent("Barrel");
 		}
 
 		@Override

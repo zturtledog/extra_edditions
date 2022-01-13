@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "extra_additions:block/barrel",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "extra_additions:block/barrel"
+    },
+    "axis=z": {
+      "model": "extra_additions:block/barrel",
+      "x": 90
+    }
+  }
+}

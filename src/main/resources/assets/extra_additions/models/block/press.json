@@ -1,0 +1,8 @@
+{
+  "parent": "extra_additions:custom/press",
+  "textures": {
+    "all": "extra_additions:blocks/press",
+    "particle": "extra_additions:blocks/press",
+    "2": "extra_additions:blocks/press"
+  }
+}
