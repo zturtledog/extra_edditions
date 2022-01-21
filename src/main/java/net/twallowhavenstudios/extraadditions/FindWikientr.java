@@ -2,7 +2,7 @@ package net.twallowhavenstudios.extraadditions;
 
 import net.minecraftforge.fml.loading.FMLPaths;
 import net.minecraft.entity.Entity;
-import engine.DatascrpItnr;
+import net.twallowhavenstudios.extraadditions.DatascrpItnr;
 
 public class FindWikientr {
 	public FindWikientr() {

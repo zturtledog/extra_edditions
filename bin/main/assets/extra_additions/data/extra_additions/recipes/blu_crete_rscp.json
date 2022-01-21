@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "minecraft:light_blue_dye"
+    },
+    "1": {
+      "item": "minecraft:glowstone"
+    },
+    "2": {
+      "item": "minecraft:light_blue_dye"
+    },
+    "3": {
+      "item": "minecraft:lapis_lazuli"
+    },
+    "4": {
+      "item": "minecraft:white_concrete"
+    },
+    "5": {
+      "item": "minecraft:lapis_lazuli"
+    },
+    "6": {
+      "item": "minecraft:gravel"
+    },
+    "7": {
+      "item": "minecraft:sand"
+    },
+    "8": {
+      "item": "minecraft:gravel"
+    }
+  },
+  "result": {
+    "item": "extra_additions:glowing_blucrete",
+    "count": 1
+  }
+}

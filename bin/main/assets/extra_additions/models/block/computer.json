@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "extra_additions:blocks/assembler_bottom",
+    "up": "extra_additions:blocks/assembler_bottom",
+    "north": "extra_additions:blocks/computer_front",
+    "east": "extra_additions:blocks/assembler_side",
+    "south": "extra_additions:blocks/assembler_side",
+    "west": "extra_additions:blocks/assembler_side",
+    "particle": "extra_additions:blocks/assembler_bottom"
+  }
+}

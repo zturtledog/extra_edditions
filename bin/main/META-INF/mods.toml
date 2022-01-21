@@ -4,11 +4,12 @@ license="Academic Free License v3.0"
 
 [[mods]]
 modId="extra_additions"
-version="1.0.0"
+version="EE-00.00.038"
 displayName="extra_additions"
-credits="Created using mod maker MCreator - https://mcreator.net/about"
-displayURL="https://mcreator.net"
-authors="twallowhavenstudios, thepinkantfoundation"
+credits="made with Mcreator(mcreator.net) and hours of screaming into a wall over debugging!"
+displayURL="https://sites.google.com/view/extra-edittions/home?authuser=1"
+logoFile="logo.png"
+authors="twallowhavenstudios"
 
 [[dependencies.extra_additions]]
     modId="minecraft"

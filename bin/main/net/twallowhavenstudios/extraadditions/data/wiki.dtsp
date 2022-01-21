@@ -1,0 +1,31 @@
+:assembler
+    name:Assembler
+    catagory:~Machines
+:assembler-dis
+    0:Your ~first ~venture ~into ~the
+    1:computer ~industry, ~it ~is ~required
+    2:for ~anything ~more ~advanced
+    3:than ~a ~disk ~of ~iron, ~it ~takes ~3
+    4:TPT ~per ~cycle.
+
+:wafer_cutter
+    name:Wafer ~Cutter
+    catagory:~Machines
+:wafer_cutter-dis
+    0:this ~is ~the ~cutter ~of
+    1:frisbees ~and ~fingers,
+    2:it ~will ~let ~you ~make ~the ~basics
+    3:of ~transistors ~and ~other ~small
+    4:parts
+
+:extractor
+    name:Extractor
+    catagory:~Machines
+:extractor-dis
+    0:this ~powerfull ~machine
+    1:alows ~you ~to ~extract
+    2:materials ~from
+    3:simpler ~things ~such ~as
+    4:biopolymer ~and ~silicon
+    5:it ~is ~your ~first ~step ~into ~the 
+    6:world ~of ~prossesing

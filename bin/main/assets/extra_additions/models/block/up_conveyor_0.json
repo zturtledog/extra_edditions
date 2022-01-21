@@ -1,0 +1,8 @@
+{
+  "parent": "extra_additions:custom/convey-or",
+  "textures": {
+    "all": "extra_additions:blocks/ucontex1",
+    "particle": "extra_additions:blocks/ucontex1",
+    "0": "extra_additions:blocks/ucontex1"
+  }
+}

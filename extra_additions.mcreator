@@ -2467,6 +2467,116 @@
       "ids": {},
       "registry_name": "barrel_page_seal",
       "path": "~/farming"
+    },
+    {
+      "name": "Screenon",
+      "type": "block",
+      "sortid": 154,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "screenon",
+      "path": "~/computing"
+    },
+    {
+      "name": "Screenoff",
+      "type": "block",
+      "sortid": 154,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "screenoff",
+      "path": "~/computing"
+    },
+    {
+      "name": "ScreenOnRefresh",
+      "type": "procedure",
+      "sortid": 155,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "screen_on_refresh",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/computing"
+    },
+    {
+      "name": "ScreenLredOn",
+      "type": "procedure",
+      "sortid": 156,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "screen_lred_on",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/computing"
+    },
+    {
+      "name": "ScreenLredOff",
+      "type": "procedure",
+      "sortid": 156,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "screen_lred_off",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/computing"
     }
   ],
   "variable_elements": [],
@@ -2538,6 +2648,7 @@
       "block.extra_additions.conveyorlvl_0": "Conveyor lvl 1",
       "item.extra_additions.tabiconprossesing": "Tabiconprossesing",
       "advancements.spentclick_200_advan.descr": "you clicked the barrel over 200 times, congratulations",
+      "block.extra_additions.screenon": "Screenon",
       "block.extra_additions.conveyorlvl_1": "Conveyor lvl 2",
       "block.extra_additions.macinetemplate": "Macinetemplate",
       "subtitles.polypian-night": "polypian Night by: confusedParrotfish",
@@ -2565,6 +2676,7 @@
       "item.extra_additions.honeydewmelon": "Honeydewmelon",
       "item.extra_additions.tab_icon_brewing": "Tab Icon Brewing",
       "itemGroup.tabastetic": "Astetic",
+      "block.extra_additions.screenoff": "Screen",
       "advancements.wafer_advan.descr": "gain any wafer",
       "item.extra_additions.gold_wafer": "Gold Wafer",
       "item.extra_additions.blackberry": "Blackberry",

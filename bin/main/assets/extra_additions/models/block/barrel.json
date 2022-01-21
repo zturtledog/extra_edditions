@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "extra_additions:blocks/barrel_top",
+    "up": "extra_additions:blocks/barrel_top",
+    "north": "extra_additions:blocks/barrel_side",
+    "east": "extra_additions:blocks/barrel_side",
+    "south": "extra_additions:blocks/barrel_side",
+    "west": "extra_additions:blocks/barrel_side",
+    "particle": "extra_additions:blocks/barrel_top"
+  }
+}

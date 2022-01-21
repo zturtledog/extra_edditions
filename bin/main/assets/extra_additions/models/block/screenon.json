@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "extra_additions:blocks/screenon",
+    "up": "extra_additions:blocks/screenon",
+    "north": "extra_additions:blocks/screenon",
+    "east": "extra_additions:blocks/screenon",
+    "south": "extra_additions:blocks/screenon",
+    "west": "extra_additions:blocks/screenon",
+    "particle": "extra_additions:blocks/screenon"
+  }
+}

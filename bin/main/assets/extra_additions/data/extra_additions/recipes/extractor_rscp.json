@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "extra_additions:copper_ingot"
+    },
+    "1": {
+      "item": "minecraft:hopper"
+    },
+    "2": {
+      "item": "extra_additions:copper_ingot"
+    },
+    "3": {
+      "item": "minecraft:piston"
+    },
+    "4": {
+      "item": "extra_additions:machine_frame"
+    },
+    "5": {
+      "item": "minecraft:piston"
+    },
+    "6": {
+      "item": "minecraft:quartz"
+    },
+    "7": {
+      "item": "minecraft:iron_ingot"
+    },
+    "8": {
+      "item": "minecraft:quartz"
+    }
+  },
+  "result": {
+    "item": "extra_additions:extractor",
+    "count": 1
+  }
+}

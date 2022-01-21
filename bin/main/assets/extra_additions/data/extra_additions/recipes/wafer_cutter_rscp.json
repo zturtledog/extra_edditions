@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "extra_additions:plastic"
+    },
+    "1": {
+      "item": "extra_additions:machine_frame"
+    },
+    "2": {
+      "item": "extra_additions:plastic"
+    },
+    "3": {
+      "item": "extra_additions:copper_ingot"
+    },
+    "4": {
+      "item": "extra_additions:drillbit"
+    },
+    "5": {
+      "item": "extra_additions:copper_ingot"
+    },
+    "6": {
+      "item": "extra_additions:plastic"
+    },
+    "7": {
+      "item": "minecraft:redstone"
+    },
+    "8": {
+      "item": "extra_additions:plastic"
+    }
+  },
+  "result": {
+    "item": "extra_additions:wafer_cutter",
+    "count": 1
+  }
+}
