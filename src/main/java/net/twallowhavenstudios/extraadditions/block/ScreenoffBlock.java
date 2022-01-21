@@ -95,6 +95,11 @@ public class ScreenoffBlock extends ExtraAdditionsModElements.ModElement {
 		}
 
 		@Override
+		public boolean canConnectRedstone(BlockState state, IBlockReader world, BlockPos pos, Direction side) {
+			return true;
+		}
+
+		@Override
 		public List<ItemStack> getDrops(BlockState state, LootContext.Builder builder) {
 			List<ItemStack> dropsOriginal = super.getDrops(state, builder);
 			if (!dropsOriginal.isEmpty())
