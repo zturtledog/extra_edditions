@@ -4,7 +4,7 @@ package net.twallowhavenstudios.extraadditions.block;
 import net.twallowhavenstudios.extraadditions.procedures.JohnathanProcedure;
 import net.twallowhavenstudios.extraadditions.procedures.ComputerRedstoneOnProcedure;
 import net.twallowhavenstudios.extraadditions.procedures.ComputerRedstoneOffProcedure;
-import net.twallowhavenstudios.extraadditions.itemgroup.ProssesingItemGroup;
+import net.twallowhavenstudios.extraadditions.itemgroup.ComputingItemGroup;
 import net.twallowhavenstudios.extraadditions.gui.ComputerGUIGui;
 import net.twallowhavenstudios.extraadditions.ExtraAdditionsModElements;
 
@@ -88,7 +88,7 @@ public class ComputerBlock extends ExtraAdditionsModElements.ModElement {
 	@Override
 	public void initElements() {
 		elements.blocks.add(() -> new CustomBlock());
-		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(ProssesingItemGroup.tab)).setRegistryName(block.getRegistryName()));
+		elements.items.add(() -> new BlockItem(block, new Item.Properties().group(ComputingItemGroup.tab)).setRegistryName(block.getRegistryName()));
 	}
 
 	private static class TileEntityRegisterHandler {

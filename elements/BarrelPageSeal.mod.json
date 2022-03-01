@@ -57,10 +57,10 @@
           "inputLimit": {
             "value": ""
           },
-          "id": 0,
+          "id": 27,
           "disableStackInteraction": false,
           "dropItemsWhenNotBound": true,
-          "name": "Slot #0",
+          "name": "Slot #27",
           "x": 150,
           "y": 80
         }
@@ -68,10 +68,10 @@
       {
         "type": "outputslot",
         "data": {
-          "id": 1,
+          "id": 28,
           "disableStackInteraction": false,
           "dropItemsWhenNotBound": true,
-          "name": "Slot #1",
+          "name": "Slot #28",
           "x": 258,
           "y": 80
         }

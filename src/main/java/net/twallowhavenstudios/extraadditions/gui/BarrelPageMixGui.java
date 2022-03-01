@@ -84,7 +84,7 @@ public class BarrelPageMixGui extends ExtraAdditionsModElements.ModElement {
 			super(containerType, id);
 			this.entity = inv.player;
 			this.world = inv.player.world;
-			this.internal = new ItemStackHandler(5);
+			this.internal = new ItemStackHandler(34);
 			BlockPos pos = null;
 			if (extraData != null) {
 				pos = extraData.readBlockPos();
@@ -122,15 +122,15 @@ public class BarrelPageMixGui extends ExtraAdditionsModElements.ModElement {
 					}
 				}
 			}
-			this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 25, 35) {
+			this.customSlots.put(29, this.addSlot(new SlotItemHandler(internal, 29, 25, 35) {
 			}));
-			this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 43, 35) {
+			this.customSlots.put(30, this.addSlot(new SlotItemHandler(internal, 30, 43, 35) {
 			}));
-			this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 25, 53) {
+			this.customSlots.put(31, this.addSlot(new SlotItemHandler(internal, 31, 25, 53) {
 			}));
-			this.customSlots.put(3, this.addSlot(new SlotItemHandler(internal, 3, 43, 53) {
+			this.customSlots.put(32, this.addSlot(new SlotItemHandler(internal, 32, 43, 53) {
 			}));
-			this.customSlots.put(4, this.addSlot(new SlotItemHandler(internal, 4, 142, 44) {
+			this.customSlots.put(33, this.addSlot(new SlotItemHandler(internal, 33, 142, 44) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
 					return false;

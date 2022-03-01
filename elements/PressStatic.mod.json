@@ -9,7 +9,7 @@
     "textureRight": "",
     "textureBack": "",
     "renderType": 2,
-    "customModelName": "press:default",
+    "customModelName": "press_down:default",
     "rotationMode": 0,
     "emissiveRendering": false,
     "displayFluidOverlay": false,
@@ -27,8 +27,17 @@
         "my": 0.0,
         "mz": 0.0,
         "Mx": 16.0,
-        "My": 16.0,
+        "My": 5.0,
         "Mz": 16.0,
+        "subtract": false
+      },
+      {
+        "mx": 7.0,
+        "my": 0.0,
+        "mz": 7.0,
+        "Mx": 9.0,
+        "My": 12.0,
+        "Mz": 9.0,
         "subtract": false
       }
     ],

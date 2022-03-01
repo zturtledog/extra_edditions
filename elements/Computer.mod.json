@@ -39,7 +39,7 @@
     "hasGravity": false,
     "isWaterloggable": false,
     "creativeTab": {
-      "value": "CUSTOM:Prossesing"
+      "value": "CUSTOM:Computing"
     },
     "destroyTool": "Not specified",
     "customDrop": {

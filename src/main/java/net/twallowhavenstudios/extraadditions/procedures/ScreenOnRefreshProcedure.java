@@ -47,24 +47,6 @@ public class ScreenOnRefreshProcedure {
 				return -1;
 			}
 		}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "hasEE.ping:from-C-::on") == 1) {
-			if (!(new Object() {
-				public boolean getValue(IWorld world, BlockPos pos, String tag) {
-					TileEntity tileEntity = world.getTileEntity(pos);
-					if (tileEntity != null)
-						return tileEntity.getTileData().getBoolean(tag);
-					return false;
-				}
-			}.getValue(world, new BlockPos((int) x, (int) y, (int) z), "lred"))) {
-				if (!world.isRemote()) {
-					BlockPos _bp = new BlockPos((int) x, (int) y, (int) z);
-					TileEntity _tileEntity = world.getTileEntity(_bp);
-					BlockState _bs = world.getBlockState(_bp);
-					if (_tileEntity != null)
-						_tileEntity.getTileData().putDouble("hasEE.ping:from-C-::on", 0);
-					if (world instanceof World)
-						((World) world).notifyBlockUpdate(_bp, _bs, _bs, 3);
-				}
-			}
 			if (ScreenoffBlock.block == (world.getBlockState(new BlockPos((int) x, (int) y, (int) z))).getBlock()) {
 				world.setBlockState(new BlockPos((int) x, (int) y, (int) z), ScreenonBlock.block.getDefaultState(), 3);
 			}

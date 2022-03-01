@@ -84,7 +84,7 @@ public class BarrelPageSealGui extends ExtraAdditionsModElements.ModElement {
 			super(containerType, id);
 			this.entity = inv.player;
 			this.world = inv.player.world;
-			this.internal = new ItemStackHandler(2);
+			this.internal = new ItemStackHandler(29);
 			BlockPos pos = null;
 			if (extraData != null) {
 				pos = extraData.readBlockPos();
@@ -122,9 +122,9 @@ public class BarrelPageSealGui extends ExtraAdditionsModElements.ModElement {
 					}
 				}
 			}
-			this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 25, 44) {
+			this.customSlots.put(27, this.addSlot(new SlotItemHandler(internal, 27, 25, 44) {
 			}));
-			this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 133, 44) {
+			this.customSlots.put(28, this.addSlot(new SlotItemHandler(internal, 28, 133, 44) {
 				@Override
 				public boolean isItemValid(ItemStack stack) {
 					return false;

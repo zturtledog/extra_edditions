@@ -30,6 +30,15 @@
         "My": 5.0,
         "Mz": 16.0,
         "subtract": false
+      },
+      {
+        "mx": 7.0,
+        "my": 0.0,
+        "mz": 7.0,
+        "Mx": 9.0,
+        "My": 20.0,
+        "Mz": 9.0,
+        "subtract": false
       }
     ],
     "name": "Press",

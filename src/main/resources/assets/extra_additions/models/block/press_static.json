@@ -1,5 +1,5 @@
 {
-  "parent": "extra_additions:custom/press",
+  "parent": "extra_additions:custom/press_down",
   "textures": {
     "all": "extra_additions:blocks/press",
     "particle": "extra_additions:blocks/press",

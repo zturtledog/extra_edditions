@@ -44,10 +44,10 @@
           "inputLimit": {
             "value": ""
           },
-          "id": 0,
+          "id": 29,
           "disableStackInteraction": false,
           "dropItemsWhenNotBound": true,
-          "name": "Slot #0",
+          "name": "Slot #29",
           "x": 150,
           "y": 71
         }
@@ -58,10 +58,10 @@
           "inputLimit": {
             "value": ""
           },
-          "id": 1,
+          "id": 30,
           "disableStackInteraction": false,
           "dropItemsWhenNotBound": true,
-          "name": "Slot #1",
+          "name": "Slot #30",
           "x": 168,
           "y": 71
         }
@@ -72,10 +72,10 @@
           "inputLimit": {
             "value": ""
           },
-          "id": 2,
+          "id": 31,
           "disableStackInteraction": false,
           "dropItemsWhenNotBound": true,
-          "name": "Slot #2",
+          "name": "Slot #31",
           "x": 150,
           "y": 89
         }
@@ -86,10 +86,10 @@
           "inputLimit": {
             "value": ""
           },
-          "id": 3,
+          "id": 32,
           "disableStackInteraction": false,
           "dropItemsWhenNotBound": true,
-          "name": "Slot #3",
+          "name": "Slot #32",
           "x": 168,
           "y": 89
         }
@@ -110,10 +110,10 @@
       {
         "type": "outputslot",
         "data": {
-          "id": 4,
+          "id": 33,
           "disableStackInteraction": false,
           "dropItemsWhenNotBound": true,
-          "name": "Slot #4",
+          "name": "Slot #33",
           "x": 267,
           "y": 80
         }
